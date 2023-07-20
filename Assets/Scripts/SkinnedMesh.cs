@@ -18,6 +18,10 @@ public class SkinnedMesh : MonoBehaviour
         {
             Mesh m = new Mesh();
             skinnedMesh.BakeMesh(m);
+
+            Vector3[] vertices = m.vertices;
+            Mesh m2 = new Mesh();
+            m2.vertices = vertices;
             VFXGrapgh.SetMesh("Mesh", m);
 
             yield return new WaitForSeconds(refreshRate);
