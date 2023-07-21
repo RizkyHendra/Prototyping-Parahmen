@@ -3,9 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class DialogueSystem : MonoBehaviour
 {
+    public static DialogueSystem Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     [SerializeField] private TextMeshProUGUI textDialogue;
     [SerializeField] private TextMeshProUGUI nameDialogue;
     [SerializeField] private Image characterImage;
@@ -16,14 +31,17 @@ public class DialogueSystem : MonoBehaviour
 
     [SerializeField] private float textSpeed;
 
+    public PlayerInput input;
+    public bool dialogueEnd;
+
     private int index;
 
     void Start()
     {
         textDialogue.text = string.Empty;
-        StartDialogue();
         nameDialogue.text = nameDialogueText[index];
         characterImage.sprite = characterImageSprite[index];
+        dialogueEnd = false;
     }
 
     void Update()
@@ -44,9 +62,10 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    void StartDialogue()
+    public void StartDialogue()
     {
         index = 0;
+        input.DeactivateInput();
         StartCoroutine(TypeLine());
     }
 
@@ -70,6 +89,8 @@ public class DialogueSystem : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            input.ActivateInput();
+            dialogueEnd = true;
         }
     }
 }

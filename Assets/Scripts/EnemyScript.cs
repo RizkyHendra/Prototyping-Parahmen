@@ -55,9 +55,6 @@ public class EnemyScript : MonoBehaviour
         playerCombat.OnTrajectory.AddListener((x) => OnPlayerTrajectory(x));
 
         MovementCoroutine = StartCoroutine(EnemyMovement());
-
-        dialogueEnd = false;
-
     }
 
     IEnumerator EnemyMovement()
@@ -88,13 +85,7 @@ public class EnemyScript : MonoBehaviour
         //Constantly look at player
         transform.LookAt(new Vector3(playerCombat.transform.position.x, transform.position.y, playerCombat.transform.position.z));
 
-        //Only moves if the direction is set
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            dialogueEnd = true;
-        }
-
-        if (dialogueEnd == true)
+        if (DialogueSystem.Instance.dialogueEnd == true)
         {
             MoveEnemy(moveDirection);
         }

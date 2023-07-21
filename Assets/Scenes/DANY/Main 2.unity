@@ -8827,7 +8827,7 @@ MonoBehaviour:
     m_ImpulseType: 3
     m_DissipationRate: 0
     m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-    m_AmplitudeGain: 23.23805
+    m_AmplitudeGain: 3.888588
     m_FrequencyGain: 0.2
     m_RepeatMode: 0
     m_Randomize: 1
@@ -16181,7 +16181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &524975299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16271,6 +16271,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d98fbe17966d8ef449b25b99024bf36f, type: 3}
   - {fileID: 21300000, guid: dae33700bd23f76409a80bf78fdb8a42, type: 3}
   textSpeed: 0.03
+  input: {fileID: 1481056321}
+  dialogueEnd: 0
 --- !u!1 &525453063
 GameObject:
   m_ObjectHideFlags: 0
@@ -19864,7 +19866,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 2293
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: NaN}
+  m_BoundingSphereOverride: {x: 2.4810396e+27, y: 7.1518455e+22, z: 1.6634185e+22, w: 1.6632139e+22}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0.33
@@ -22212,7 +22214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3274f8513b101c4a93ce777c6965059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1
   isPreparingAttack: 0
   isMoving: 0
   isRetreating: 0
@@ -25072,8 +25074,9 @@ GameObject:
   - component: {fileID: 862603719}
   - component: {fileID: 862603718}
   - component: {fileID: 862603717}
+  - component: {fileID: 862603720}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: StateTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25157,6 +25160,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862603715}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &862603720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862603715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b15c023504650247a982bca9db21943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObj: {fileID: 524975298}
 --- !u!1 &863983897
 GameObject:
   m_ObjectHideFlags: 0
@@ -27670,7 +27686,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921220542}
-  m_LocalRotation: {x: 0.26947013, y: -4.5409196e-18, z: 1.2706449e-18, w: 0.96300876}
+  m_LocalRotation: {x: 0.2694701, y: -0.000000028699901, z: 0.0000000080308356, w: 0.96300876}
   m_LocalPosition: {x: -31.7, y: 11.26, z: -25.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36144,7 +36160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3274f8513b101c4a93ce777c6965059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1
   isPreparingAttack: 0
   isMoving: 0
   isRetreating: 0
@@ -55920,7 +55936,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523861860}
-  m_LocalRotation: {x: 0.17397407, y: 0.0030606017, z: -0.0011899855, w: 0.98474485}
+  m_LocalRotation: {x: 0.17397404, y: 0.0030606017, z: -0.0011899854, w: 0.98474485}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -57568,7 +57584,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566369426}
-  m_LocalRotation: {x: 0.18464342, y: 0.003047516, z: -0.0012231079, w: 0.9828002}
+  m_LocalRotation: {x: 0.18464339, y: 0.003047516, z: -0.0012231078, w: 0.9828002}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -71195,7 +71211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3274f8513b101c4a93ce777c6965059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1
   isPreparingAttack: 0
   isMoving: 0
   isRetreating: 0
@@ -73042,7 +73058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3274f8513b101c4a93ce777c6965059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1
   isPreparingAttack: 0
   isMoving: 0
   isRetreating: 0
@@ -74622,7 +74638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3274f8513b101c4a93ce777c6965059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1
   isPreparingAttack: 0
   isMoving: 0
   isRetreating: 0
@@ -77203,7 +77219,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091091699}
-  m_LocalRotation: {x: 0.1632943, y: 0.003073338, z: -0.0011567632, w: 0.98657197}
+  m_LocalRotation: {x: 0.1632943, y: 0.0030732926, z: -0.001156746, w: 0.98657197}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
