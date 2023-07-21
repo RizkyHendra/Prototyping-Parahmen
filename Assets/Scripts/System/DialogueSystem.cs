@@ -1,36 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DialogueSystem : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent;
-    public string[] lines;
-    public float textSpeed;
+    [SerializeField] private TextMeshProUGUI textDialogue;
+    [SerializeField] private TextMeshProUGUI nameDialogue;
+    [SerializeField] private Image characterImage;
+
+    [SerializeField] private string[] textDialogueText;
+    [SerializeField] private string[] nameDialogueText;
+    [SerializeField] private Sprite[] characterImageSprite;
+
+    [SerializeField] private float textSpeed;
 
     private int index;
 
-    // Start is called before the first frame update
     void Start()
     {
-        textComponent.text = string.Empty;
+        textDialogue.text = string.Empty;
         StartDialogue();
+        nameDialogue.text = nameDialogueText[index];
+        characterImage.sprite = characterImageSprite[index];
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (textComponent.text == lines[index])
+            if (textDialogue.text == textDialogueText[index])
             {
                 NextLine();
+                nameDialogue.text = nameDialogueText[index];
+                characterImage.sprite = characterImageSprite[index];
             }
             else
             {
                 StopAllCoroutines();
-                textComponent.text = lines[index];
+                textDialogue.text = textDialogueText[index];  
             }
         }
     }
@@ -43,19 +52,19 @@ public class DialogueSystem : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-        foreach (char c in lines[index].ToCharArray())
+        foreach (char c in textDialogueText[index].ToCharArray())
         {
-            textComponent.text += c;
+            textDialogue.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
     }
 
     void NextLine()
     {
-        if (index < lines.Length - 1)
+        if (index < textDialogueText.Length - 1)
         {
             index++;
-            textComponent.text = string.Empty;
+            textDialogue.text = string.Empty;
             StartCoroutine(TypeLine());
         }
         else
