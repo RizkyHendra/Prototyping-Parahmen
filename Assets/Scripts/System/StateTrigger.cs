@@ -4,19 +4,12 @@ using UnityEngine;
 
 public class StateTrigger : MonoBehaviour
 {
-    public GameObject dialogueObj;
-
-    private void Start()
-    {
-        dialogueObj.SetActive(false);
-    }
 
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            dialogueObj.SetActive(true);
-            DialogueSystem.Instance.StartDialogue();
+            DialogueSystem.Instance.StartDialogue(0);
             Destroy(gameObject);
         }
     }

@@ -24,10 +24,13 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textDialogue;
     [SerializeField] private TextMeshProUGUI nameDialogue;
     [SerializeField] private Image characterImage;
+    [SerializeField] private GameObject dialogueContainer;
 
-    [SerializeField] private string[] textDialogueText;
-    [SerializeField] private string[] nameDialogueText;
-    [SerializeField] private Sprite[] characterImageSprite;
+    //[SerializeField] private string[] textDialogueText;
+    //[SerializeField] private string[] nameDialogueText;
+    //[SerializeField] private Sprite[] characterImageSprite;
+
+    public ItemDialogue[] classItemsDialogue;
 
     [SerializeField] private float textSpeed;
 
@@ -35,12 +38,10 @@ public class DialogueSystem : MonoBehaviour
     public bool dialogueEnd;
 
     private int index;
+    private int classIndex;
 
     void Start()
     {
-        textDialogue.text = string.Empty;
-        nameDialogue.text = nameDialogueText[index];
-        characterImage.sprite = characterImageSprite[index];
         dialogueEnd = false;
     }
 
@@ -48,30 +49,39 @@ public class DialogueSystem : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (textDialogue.text == textDialogueText[index])
+            if (textDialogue.text == classItemsDialogue[classIndex].textDialogueText[index])
             {
                 NextLine();
-                nameDialogue.text = nameDialogueText[index];
-                characterImage.sprite = characterImageSprite[index];
+                nameDialogue.text = classItemsDialogue[classIndex].nameDialogueText[index];
+                characterImage.sprite = classItemsDialogue[classIndex].characterImageSprite[index];
             }
             else
             {
                 StopAllCoroutines();
-                textDialogue.text = textDialogueText[index];  
+                textDialogue.text = classItemsDialogue[classIndex].textDialogueText[index];  
             }
         }
     }
 
-    public void StartDialogue()
+    public void StartDialogue(int number)
     {
+        textDialogue.gameObject.SetActive(true);
+        nameDialogue.gameObject.SetActive(true);
+        characterImage.gameObject.SetActive(true);
+        dialogueContainer.SetActive(true);
         index = 0;
+        classIndex = number;
+        textDialogue.text = string.Empty;
+        nameDialogue.text = classItemsDialogue[number].nameDialogueText[index];
+        characterImage.sprite = classItemsDialogue[number].characterImageSprite[index];
+
         input.DeactivateInput();
         StartCoroutine(TypeLine());
     }
 
     IEnumerator TypeLine()
     {
-        foreach (char c in textDialogueText[index].ToCharArray())
+        foreach (char c in classItemsDialogue[classIndex].textDialogueText[index].ToCharArray())
         {
             textDialogue.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -80,7 +90,7 @@ public class DialogueSystem : MonoBehaviour
 
     void NextLine()
     {
-        if (index < textDialogueText.Length - 1)
+        if (index < classItemsDialogue[classIndex].textDialogueText.Length - 1)
         {
             index++;
             textDialogue.text = string.Empty;
@@ -88,9 +98,20 @@ public class DialogueSystem : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            textDialogue.gameObject.SetActive(false);
+            nameDialogue.gameObject.SetActive(false);
+            characterImage.gameObject.SetActive(false);
+            dialogueContainer.SetActive(false);
             input.ActivateInput();
             dialogueEnd = true;
         }
     }
+}
+
+[System.Serializable]
+public class ItemDialogue
+{
+    public string[] textDialogueText;
+    public string[] nameDialogueText;
+    public Sprite[] characterImageSprite;
 }
