@@ -77,7 +77,10 @@ public class EnemyManager : MonoBehaviour
         }
 
         if (enemyIndexes.Count == 0)
+        {
             return null;
+        }
+            
 
         EnemyScript randomEnemy;
         int randomIndex = Random.Range(0, enemyIndexes.Count);
@@ -139,6 +142,10 @@ public class EnemyManager : MonoBehaviour
                 count++;
         }
         aliveEnemyCount = count;
+        if (aliveEnemyCount == 0)
+        {
+            DialogueSystem.Instance.StartDialogue(1);
+        }
         return count;
     }
 
