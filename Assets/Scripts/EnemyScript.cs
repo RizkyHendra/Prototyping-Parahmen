@@ -85,10 +85,7 @@ public class EnemyScript : MonoBehaviour
         //Constantly look at player
         transform.LookAt(new Vector3(playerCombat.transform.position.x, transform.position.y, playerCombat.transform.position.z));
 
-        if (DialogueSystem.Instance.dialogueEnd == true)
-        {
-            MoveEnemy(moveDirection);
-        }
+        MoveEnemy(moveDirection);
     }
 
     //Listened event from Player Animation

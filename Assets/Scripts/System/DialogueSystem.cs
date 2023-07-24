@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -24,11 +25,9 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textDialogue;
     [SerializeField] private TextMeshProUGUI nameDialogue;
     [SerializeField] private Image characterImage;
-    [SerializeField] private GameObject dialogueContainer;
+    [SerializeField] private GameObject dialogueContainer, GUIobj;
 
-    //[SerializeField] private string[] textDialogueText;
-    //[SerializeField] private string[] nameDialogueText;
-    //[SerializeField] private Sprite[] characterImageSprite;
+    [SerializeField] private Animator animFade;
 
     public ItemDialogue[] classItemsDialogue;
 
@@ -69,6 +68,7 @@ public class DialogueSystem : MonoBehaviour
         nameDialogue.gameObject.SetActive(true);
         characterImage.gameObject.SetActive(true);
         dialogueContainer.SetActive(true);
+        GUIobj.SetActive(false);
         index = 0;
         classIndex = number;
         textDialogue.text = string.Empty;
@@ -104,7 +104,16 @@ public class DialogueSystem : MonoBehaviour
             dialogueContainer.SetActive(false);
             input.ActivateInput();
             dialogueEnd = true;
+
+            StartCoroutine(fadeScreen(1f));
         }
+    }
+
+    private IEnumerator fadeScreen(float time)
+    {
+        animFade.Play("fade");
+        yield return new WaitForSecondsRealtime(time);
+        SceneManager.LoadScene(1);
     }
 }
 

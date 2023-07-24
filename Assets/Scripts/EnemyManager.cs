@@ -142,10 +142,6 @@ public class EnemyManager : MonoBehaviour
                 count++;
         }
         aliveEnemyCount = count;
-        if (aliveEnemyCount == 0)
-        {
-            DialogueSystem.Instance.StartDialogue(1);
-        }
         return count;
     }
 
