@@ -113,7 +113,7 @@ public class DialogueSystem : MonoBehaviour
     {
         animFade.Play("fade");
         yield return new WaitForSecondsRealtime(time);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
 
