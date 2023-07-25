@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/EDWARD/Start Scene.unity
+    guid: d0e3f1fe1c42a5b42beff9929bc637eb
+  - enabled: 1
     path: Assets/Scenes/DANY/Main 2.unity
     guid: c2a1380cc7787b94f88f4be2f6b5c15d
   - enabled: 1
