@@ -155,7 +155,7 @@ RectTransform:
   - {fileID: 984219264}
   - {fileID: 1189408686}
   m_Father: {fileID: 1412194346}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -534,7 +534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &522891624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -669,7 +669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &526542703
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1007,7 +1007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &706652323
 Light:
   m_ObjectHideFlags: 0
@@ -1437,7 +1437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1052888593
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1543,8 +1543,8 @@ MonoBehaviour:
   textDialogue: {fileID: 2072237616}
   nameDialogue: {fileID: 522891625}
   characterImage: {fileID: 526542704}
-  dialogueContainer: {fileID: 1052888592}
-  GUIobj: {fileID: 201195275}
+  dialogueObj: {fileID: 1948967206}
+  GUIObj: {fileID: 201195275}
   animFade: {fileID: 1778770018}
   classItemsDialogue:
   - textDialogueText:
@@ -1570,7 +1570,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 70632ddfe8e71b04b8f90ef7e29a9e98, type: 3}
   textSpeed: 0.03
   input: {fileID: 553634852}
-  dialogueEnd: 0
+  onDialogueScene: 0
 --- !u!1 &1189408685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,8 +1828,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1948967207}
-  - {fileID: 1778770015}
   - {fileID: 201195276}
+  - {fileID: 1778770015}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1962,7 +1962,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1412194346}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2093,7 +2093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2072237615
 RectTransform:
   m_ObjectHideFlags: 0
