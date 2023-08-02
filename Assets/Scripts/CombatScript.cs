@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class CombatScript : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class CombatScript : MonoBehaviour
     private MovementInput movementInput;
     private Animator animator;
     private CinemachineImpulseSource impulseSource;
+
+    [Header("Stamina Bar")]
+    public float stamina;
+    float maxStamina;
+    public Slider staminaBar;
+    public float dValue;
 
     [Header("Target")]
     private EnemyScript lockedTarget;
@@ -45,6 +52,10 @@ public class CombatScript : MonoBehaviour
 
     void Start()
     {
+        // Stamina Bar
+        maxStamina = stamina;
+        
+
         enemyManager = FindObjectOfType<EnemyManager>();
         animator = GetComponent<Animator>();
         enemyDetection = GetComponentInChildren<EnemyDetection>();
@@ -52,11 +63,41 @@ public class CombatScript : MonoBehaviour
         impulseSource = GetComponentInChildren<CinemachineImpulseSource>();
     }
 
+    private void Update()
+    {
+        if(isAttackingEnemy == false)
+        {
+            if (stamina != maxStamina)
+            {
+                IncreseEnergy();
+            }
+        }
+      
+    }
+
+    private void DecreaseEnergey()
+    {
+        if (stamina != 0)
+            stamina -= dValue;
+        if (stamina <= -1)
+            stamina = 0;
+    }
+    private void IncreseEnergy()
+    {
+
+        stamina += dValue * Time.deltaTime / 1;
+    }
     //This function gets called whenever the player inputs the punch action
     void AttackCheck()
     {
-        if (isAttackingEnemy)
+        if (isAttackingEnemy )
+
             return;
+
+       
+
+
+      
 
         //Check to see if the detection behavior has an enemy set
         if (enemyDetection.CurrentTarget() == null)
@@ -81,7 +122,18 @@ public class CombatScript : MonoBehaviour
             lockedTarget = enemyManager.RandomEnemy();
 
         //AttackTarget
-        Attack(lockedTarget, TargetDistance(lockedTarget));
+        if(stamina > 30)
+        {
+            DecreaseEnergey();
+            Attack(lockedTarget, TargetDistance(lockedTarget));
+        }
+     
+         if(stamina < 0)
+        {
+            stamina = 0;
+            lockedTarget = null;
+        }
+        
     }
 
     public void Attack(EnemyScript target, float distance)
@@ -98,12 +150,14 @@ public class CombatScript : MonoBehaviour
 
         if (distance < 15)
         {
+            DecreaseEnergey();
             animationCount = (int)Mathf.Repeat((float)animationCount + 1, (float)attacks.Length);
             string attackString = isLastHit() ? attacks[Random.Range(0, attacks.Length)] : attacks[animationCount];
             AttackType(attackString, attackCooldown, target, .65f);
         }
         else
         {
+            
             lockedTarget = null;
             AttackType("GroundPunch", .2f, null, 0);
         }
@@ -157,7 +211,7 @@ public class CombatScript : MonoBehaviour
     void MoveTorwardsTarget(EnemyScript target, float duration)
     {
         OnTrajectory.Invoke(target);
-        transform.DOLookAt(target.transform.position, .2f);
+        transform.DOLookAt(target.transform.position, .1f);
         transform.DOMove(TargetOffset(target.transform), duration);
     }
 
