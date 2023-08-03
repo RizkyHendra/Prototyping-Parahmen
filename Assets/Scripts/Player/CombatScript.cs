@@ -33,6 +33,7 @@ public class CombatScript : MonoBehaviour
     [SerializeField] private Transform punchPosition;
     [SerializeField] private ParticleSystemScript punchParticle;
     [SerializeField] private GameObject lastHitCamera;
+    [SerializeField] private GameObject CounterCamera;
     [SerializeField] private Transform lastHitFocusObject;
 
     //Coroutines
@@ -74,6 +75,7 @@ public class CombatScript : MonoBehaviour
                 IncreseEnergy();
             }
         }
+     
         staminaBar.value = stamina;
       
     }
@@ -88,7 +90,14 @@ public class CombatScript : MonoBehaviour
     private void IncreseEnergy()
     {
 
-        stamina += dValue * Time.deltaTime / 1;
+        stamina += dValue * Time.deltaTime / .70f;
+        if(stamina >= maxStamina)
+        {
+            stamina = maxStamina;
+        }
+
+      
+       
     }
     //This function gets called whenever the player inputs the punch action
     void AttackCheck()
@@ -200,7 +209,7 @@ public class CombatScript : MonoBehaviour
             LerpCharacterAcceleration();
         }
 
-        IEnumerator FinalBlowCoroutine()
+         IEnumerator FinalBlowCoroutine()
         {
             Time.timeScale = .5f;
             lastHitCamera.SetActive(true);
@@ -226,27 +235,37 @@ public class CombatScript : MonoBehaviour
 
         lockedTarget = ClosestCounterEnemy();
         OnCounterAttack.Invoke(lockedTarget);
-
+        StartCoroutine(wow());
         if (TargetDistance(lockedTarget) > 2)
         {
             Attack(lockedTarget, TargetDistance(lockedTarget));
             return;
         }
-
-        float duration = .2f;
+       
+        float duration = .1f;
         animator.SetTrigger("Dodge");
-        transform.DOLookAt(lockedTarget.transform.position, .2f);
+        transform.DOLookAt(lockedTarget.transform.position, .1f);
         transform.DOMove(transform.position + lockedTarget.transform.forward, duration);
 
         if (counterCoroutine != null)
             StopCoroutine(counterCoroutine);
         counterCoroutine = StartCoroutine(CounterCoroutine(duration));
 
+
+        IEnumerator wow()
+        {
+            Time.timeScale = .5f;
+            CounterCamera.SetActive(true);
+            lastHitFocusObject.position = lockedTarget.transform.position;
+            yield return new WaitForSecondsRealtime(1);
+            CounterCamera.SetActive(false);
+            Time.timeScale = 1f;
+        }
         IEnumerator CounterCoroutine(float duration)
         {
             isCountering = true;
             movementInput.enabled = false;
-            yield return new WaitForSeconds(duration);
+            yield return new WaitForSeconds(.5f);
             Attack(lockedTarget, TargetDistance(lockedTarget));
             isCountering = false;
 
