@@ -125,7 +125,7 @@ public class CombatScript : MonoBehaviour
             lockedTarget = enemyManager.RandomEnemy();
 
         //AttackTarget
-        if(stamina > 30)
+        if(stamina > dValue)
         {
             DecreaseEnergey();
             Attack(lockedTarget, TargetDistance(lockedTarget));

@@ -1,25 +1,9 @@
 fileFormatVersion: 2
-guid: b4a64b8049f386748b0abb242acbe39c
+guid: 900c06741a00c4b43aba82d816d36c56
 ModelImporter:
-  serializedVersion: 20200
-  internalIDToNameTable:
-  - first:
-      74: 6710270410737119176
-    second: Punching Bag (1)
-  - first:
-      74: -203655887218126122
-    second: Punching Bag
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: eyes.001
-    second: {fileID: 2100000, guid: d5c0dc78f40c06c4e9356a3218da955b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mixbox_mat.002
-    second: {fileID: 2100000, guid: 60c2f0e0aaa8f8d4e9d23d7e3768653b, type: 2}
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -30,6 +14,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -46,36 +31,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Punching Bag
-      takeName: mixamo.com
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 115
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -88,6 +44,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -99,6 +56,7 @@ ModelImporter:
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -117,7 +75,17 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
+  referencedClips:
+  - ecdb8288b245eee4895e4c6ab9725036
+  - 0e780722fef83984a89c79f0e45ea425
+  - 13e0dbcc0383cc8449714e9ca9d74544
+  - 9f6bd98a19fb18e48aec81afd73a15f7
+  - bdd05a8eadbb14746b1b7d034916fafd
+  - 32e38d4cc3c295d4485ea0de8edb5961
+  - 92d3492a62f2ecb4a970659ee48cad50
+  - 659c487e1b3b55a41be90ed8cdac9e52
+  - 3b57993452068104d98fc8ea682eeede
+  - 85fcf353f1ea78b4e805affbcdd8e5e2
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
@@ -141,6 +109,7 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
