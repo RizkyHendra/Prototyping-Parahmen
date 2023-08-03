@@ -54,6 +54,8 @@ public class CombatScript : MonoBehaviour
     {
         // Stamina Bar
         maxStamina = stamina;
+        staminaBar.maxValue = maxStamina;
+        
         
 
         enemyManager = FindObjectOfType<EnemyManager>();
@@ -72,6 +74,7 @@ public class CombatScript : MonoBehaviour
                 IncreseEnergy();
             }
         }
+        staminaBar.value = stamina;
       
     }
 
