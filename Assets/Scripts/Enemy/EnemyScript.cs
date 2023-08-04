@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class EnemyScript : MonoBehaviour
 {
+    public Renderer eyesRenderer;
     //Declarations
     private Animator animator;
     private CombatScript playerCombat;
@@ -87,9 +88,24 @@ public class EnemyScript : MonoBehaviour
 
         MoveEnemy(moveDirection);
     }
+    public void GetHi1t()
+    {
+        animator.SetTrigger("hit");
+        StopCoroutine(EyeHitSprite());
+        StartCoroutine(EyeHitSprite());
+
+        health--;
+
+        if (health <= 0)
+        {
+            Death();
+            return;
+        }
+        StopMoving();
+    }
 
     //Listened event from Player Animation
-    void OnPlayerHit(EnemyScript target)
+    public void OnPlayerHit(EnemyScript target)
     {
         if (target == this)
         {
@@ -121,7 +137,15 @@ public class EnemyScript : MonoBehaviour
             isStunned = false;
         }
     }
+  
 
+    IEnumerator EyeHitSprite()
+    {
+        eyesRenderer.material.SetTextureOffset("_BaseColorMap", new Vector2(0, -.33f));
+        yield return new WaitForSeconds(.8f);
+        eyesRenderer.material.SetTextureOffset("_BaseColorMap", new Vector2(.66f, 0));
+
+    }
     void OnPlayerCounter(EnemyScript target)
     {
         if (target == this)

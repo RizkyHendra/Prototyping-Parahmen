@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class CombatScript : MonoBehaviour
 {
+    public TacticalMode tacticalMode;
     private EnemyManager enemyManager;
     private EnemyDetection enemyDetection;
     private MovementInput movementInput;
@@ -288,7 +289,7 @@ public class CombatScript : MonoBehaviour
     {
         if (lockedTarget == null || enemyManager.AliveEnemyCount() == 0)
             return;
-
+        tacticalMode.ModifyATB(25);
         OnHit.Invoke(lockedTarget);
 
         //Polish
