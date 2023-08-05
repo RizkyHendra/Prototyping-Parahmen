@@ -14,8 +14,11 @@ namespace Arikan
         [Header("RectTransform Roots")]
         public RectTransform centeredDotCanvas;
         public RectTransform otherDotCanvas;
+        public Transform playerPosition;
         [Header("Defult Sprite")]
         public Sprite defaultSprite;
+        public Sprite floor1Map, floor2Map;
+        public Image mapSprite;
         [Header("Default Dot Prefab")]
         public Image uiDotPrefab;
 #if ODIN_INSPECTOR
@@ -144,6 +147,8 @@ namespace Arikan
                     Translate(target, redDot);
                 }
             }
+
+            MapSwicth();
         }
 
 
@@ -185,6 +190,18 @@ namespace Arikan
             {
                 var worldBounds = miniMapBounds.GetWorldRect();
                 Gizmos.DrawWireCube(worldBounds.center, worldBounds.size);
+            }
+        }
+
+        private void MapSwicth()
+        {
+            if(playerPosition.transform.position.y < 1.8f)
+            {
+                mapSprite.sprite = floor1Map;
+            }
+            else
+            {
+                mapSprite.sprite = floor2Map;
             }
         }
     }

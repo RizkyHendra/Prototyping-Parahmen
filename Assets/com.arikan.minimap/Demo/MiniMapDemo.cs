@@ -17,7 +17,7 @@ public class MiniMapDemo : MonoBehaviour
 
         // Red object example
         var img = minimap.FollowCentered(obj1Centered.transform);
-        img.color = obj1Centered.material.color;
+        //img.color = obj1Centered.material.color;
 
         // Green object example
         //var img2 = minimap.Follow(obj2.transform);
