@@ -29,17 +29,15 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private GameObject dialogueObj, GUIObj;
 
     [SerializeField] private Animator animFade;
-
-    public ItemDialogue[] classItemsDialogue;
-
     [SerializeField] private float textSpeed;
-
-    public PlayerInput input;
+    [SerializeField] private PlayerInput input;
     public bool onDialogueScene;
 
     private int index;
     private int classIndex;
     private int loadSceneIndex;
+
+    public ItemDialogue[] classItemsDialogue;
 
     void Start()
     {
