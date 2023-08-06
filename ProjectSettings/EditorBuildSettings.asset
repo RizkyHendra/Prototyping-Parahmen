@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fight.unity
     guid: e18487c86b8c40e42b7b7f2168060ea8
+  - enabled: 1
+    path: Assets/Scenes/DANY/TempEnvironment.unity
+    guid: 049ec42e8d9242b48b86b084411c84a6
+  - enabled: 1
+    path: Assets/Scenes/DANY/TempFight.unity
+    guid: 77e5fad3e8d40eb49bd13406f0a9d0f9
   m_configObjects: {}
