@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using StarterAssets;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -26,11 +27,11 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameDialogue;
     [SerializeField] private Image characterImage;
 
-    [SerializeField] private GameObject dialogueObj, GUIObj;
+    [SerializeField] private GameObject dialogueObj, GUIObj, dialogueBorderObj, dialogueCamera;
 
     [SerializeField] private Animator animFade;
     [SerializeField] private float textSpeed;
-    [SerializeField] private PlayerInput input;
+    [SerializeField] private GameObject player;
     public bool onDialogueScene;
 
     private int index;
@@ -44,6 +45,8 @@ public class DialogueSystem : MonoBehaviour
         onDialogueScene = false;
 
         dialogueObj.SetActive(false);
+        dialogueBorderObj.SetActive(false);
+        dialogueCamera.SetActive(false);
         GUIObj.SetActive(true);
     }
 
@@ -58,6 +61,7 @@ public class DialogueSystem : MonoBehaviour
                     NextLine();
                     nameDialogue.text = classItemsDialogue[classIndex].nameDialogueText[index];
                     characterImage.sprite = classItemsDialogue[classIndex].characterImageSprite[index];
+                    dialogueCamera.transform.SetLocalPositionAndRotation(classItemsDialogue[classIndex].cameraPos[index].position, classItemsDialogue[classIndex].cameraPos[index].rotation);
                 }
                 else
                 {
@@ -71,6 +75,8 @@ public class DialogueSystem : MonoBehaviour
     public void StartDialogue(int number, int loadScene)
     {
         dialogueObj.SetActive(true);
+        dialogueBorderObj.SetActive(true);
+        dialogueCamera.SetActive(true);
         GUIObj.SetActive(false);
         onDialogueScene = true;
         index = 0;
@@ -79,8 +85,9 @@ public class DialogueSystem : MonoBehaviour
         textDialogue.text = string.Empty;
         nameDialogue.text = classItemsDialogue[number].nameDialogueText[index];
         characterImage.sprite = classItemsDialogue[number].characterImageSprite[index];
+        dialogueCamera.transform.SetLocalPositionAndRotation(classItemsDialogue[number].cameraPos[index].position, classItemsDialogue[number].cameraPos[index].rotation);
 
-        input.DeactivateInput();
+        player.GetComponent<PlayerInput>().DeactivateInput();
         StartCoroutine(TypeLine());
     }
 
@@ -104,8 +111,10 @@ public class DialogueSystem : MonoBehaviour
         else
         {
             dialogueObj.SetActive(false);
+            dialogueBorderObj.SetActive(false);
+            dialogueCamera.SetActive(false);
             GUIObj.SetActive(true);
-            input.ActivateInput();
+            player.GetComponent<PlayerInput>().ActivateInput();
             onDialogueScene = false;
 
             StartCoroutine(fadeScreen(1f, loadSceneIndex));
@@ -126,4 +135,5 @@ public class ItemDialogue
     public string[] textDialogueText;
     public string[] nameDialogueText;
     public Sprite[] characterImageSprite;
+    public Transform[] cameraPos;
 }

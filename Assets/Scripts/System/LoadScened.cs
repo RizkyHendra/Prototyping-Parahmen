@@ -7,8 +7,12 @@ public class LoadScened : MonoBehaviour
 {
     public int index;
 
-    public void OnCLickSkip()
+    private void Update()
     {
-        SceneManager.LoadScene(index);
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(index);
+        }
+
     }
 }
