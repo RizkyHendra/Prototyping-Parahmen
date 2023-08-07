@@ -5,11 +5,14 @@ public class MiniMapDemo : MonoBehaviour
 {
     public MeshRenderer obj1Centered;
     //public MeshRenderer obj2;
-    //public MeshRenderer obj3;
+    public MeshRenderer obj3;
 
     public Sprite obj3Sprite;
 
-
+    private void Awake()
+    {
+        obj1Centered = GameObject.FindGameObjectWithTag("Player").GetComponent<MeshRenderer>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +27,7 @@ public class MiniMapDemo : MonoBehaviour
         //img2.color = obj2.material.color;
 
         // Blue object example
-        //var img3 = minimap.Follow(obj3.transform, obj3Sprite);
-        //img3.color = obj3.material.color;
+        var img3 = minimap.Follow(obj3.transform, obj3Sprite);
+        img3.color = obj3.material.color;
     }
 }

@@ -5,11 +5,27 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using StarterAssets;
 
 public class DialogueSystem : MonoBehaviour
 {
     public static DialogueSystem Instance;
+
+    [SerializeField] private TextMeshProUGUI textDialogue;
+    [SerializeField] private TextMeshProUGUI nameDialogue;
+    [SerializeField] private Image characterImage;
+
+    [SerializeField] private GameObject dialogueObj, GUIObj, dialogueBorderObj, dialogueCamera;
+
+    [SerializeField] private Animator animFade;
+    [SerializeField] private float textSpeed;
+    private GameObject player;
+    public bool onDialogueScene;
+
+    private int index;
+    private int classIndex;
+    private int loadSceneIndex;
+
+    public ItemDialogue[] classItemsDialogue;
 
     private void Awake()
     {
@@ -21,24 +37,9 @@ public class DialogueSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
-
-    [SerializeField] private TextMeshProUGUI textDialogue;
-    [SerializeField] private TextMeshProUGUI nameDialogue;
-    [SerializeField] private Image characterImage;
-
-    [SerializeField] private GameObject dialogueObj, GUIObj, dialogueBorderObj, dialogueCamera;
-
-    [SerializeField] private Animator animFade;
-    [SerializeField] private float textSpeed;
-    [SerializeField] private GameObject player;
-    public bool onDialogueScene;
-
-    private int index;
-    private int classIndex;
-    private int loadSceneIndex;
-
-    public ItemDialogue[] classItemsDialogue;
 
     void Start()
     {

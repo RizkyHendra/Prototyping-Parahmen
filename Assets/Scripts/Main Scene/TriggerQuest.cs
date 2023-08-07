@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour
+public class TriggerQuest : MonoBehaviour
 {
     [SerializeField] private int dialogueIndex;
     private void OnTriggerEnter(Collider col)
