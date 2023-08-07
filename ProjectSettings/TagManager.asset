@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Enemy
   - QuestIndicator
+  - QuestTrigger
   layers:
   - Default
   - TransparentFX

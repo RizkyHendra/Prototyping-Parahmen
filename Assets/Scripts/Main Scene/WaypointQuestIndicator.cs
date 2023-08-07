@@ -15,13 +15,13 @@ public class WaypointQuestIndicator : MonoBehaviour
     private bool isLimitation;
     private bool isPlayerGround, isTargetGround;
 
-    private void Awake()
+    private void Start()
     {
         questIconImg = GameObject.FindGameObjectWithTag("QuestIndicator").GetComponent<Image>();
         meter = questIconImg.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         indicatorGround = questIconImg.gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
 
-        target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("QuestTrigger").GetComponent<Transform>();
     }
 
     private void Update()
@@ -98,12 +98,12 @@ public class WaypointQuestIndicator : MonoBehaviour
 
         if (target.position.y < 1.8f)
         {
-            indicatorGround.text = "[BAWAH]";
+            indicatorGround.text = "[Bawah]";
             isTargetGround = true;
         }
         else
         {
-            indicatorGround.text = "[ATAS]";
+            indicatorGround.text = "[Atas]";
             isTargetGround = false;
         }
     }

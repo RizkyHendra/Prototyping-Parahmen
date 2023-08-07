@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class TriggerQuest : MonoBehaviour
 {
-    [SerializeField] private int dialogueIndex;
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            DialogueSystem.Instance.StartDialogue(dialogueIndex, 4);
-            Destroy(gameObject);
+            DialogueSystem.Instance.StartDialogue(PlayerPrefs.GetInt("Progress"), 4);
         }
     }
 }

@@ -37,12 +37,11 @@ public class DialogueSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         onDialogueScene = false;
 
         dialogueObj.SetActive(false);

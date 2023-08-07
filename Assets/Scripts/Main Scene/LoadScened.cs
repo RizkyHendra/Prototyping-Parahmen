@@ -11,6 +11,7 @@ public class LoadScened : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            PlayerPrefs.SetInt("Progress", PlayerPrefs.GetInt("Progress") + 1);
             SceneManager.LoadScene(index);
         }
 

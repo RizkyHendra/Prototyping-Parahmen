@@ -30,7 +30,7 @@ namespace Arikan
         private Dictionary<Transform, RectTransform> redDotMap = new Dictionary<Transform, RectTransform>();
         private KeyValuePair<Transform, RectTransform> mainMap = new KeyValuePair<Transform, RectTransform>();
 
-        private void Awake()
+        private void Start()
         {
             playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         }
