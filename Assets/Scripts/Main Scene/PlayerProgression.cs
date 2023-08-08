@@ -5,25 +5,34 @@ using TMPro;
 
 public class PlayerProgression : MonoBehaviour
 {
+    public static PlayerProgression Instance;
+
     [SerializeField] private GameObject controllerPlayer;
     [SerializeField] private TextMeshProUGUI textQuestUI;
-    [SerializeField] private Vector3[] spawnPosition;
-    [SerializeField] private GameObject[] stages;
-    [SerializeField] private string[] textQuest;
+
+    [SerializeField] private StagesObject[] stagesObject;
+
+    public StagesObject currentStage;
 
     private Transform player;
     void Awake()
     {
-        player = controllerPlayer.transform.GetChild(1);
-        player.transform.position = spawnPosition[PlayerPrefs.GetInt("Progress")];
-        Instantiate(controllerPlayer);
-
-        for (int i = 0; i < stages.Length; i++)
+        if (Instance == null)
         {
-            stages[i].SetActive(false);
+            Instance = this;
         }
-        stages[PlayerPrefs.GetInt("Progress")].SetActive(true);
+        else
+        {
+            Destroy(gameObject);
+        }
 
-        textQuestUI.text = textQuest[PlayerPrefs.GetInt("Progress")];
+        currentStage = stagesObject[PlayerPrefs.GetInt("Progress")];
+        player = controllerPlayer.transform.GetChild(1);
+        
+        Instantiate(controllerPlayer);
+        Instantiate(currentStage.prefabStage, currentStage.questSpawnPosition, currentStage.questSpawnRotation);
+
+        player.transform.position = currentStage.playerSpawnPosition;
+        textQuestUI.text = currentStage.questName;
     }
 }

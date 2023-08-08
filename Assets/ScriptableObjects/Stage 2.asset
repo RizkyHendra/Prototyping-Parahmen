@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52ac2ede56afeb4f99d1bb729b22141, type: 3}
+  m_Name: Stage 2
+  m_EditorClassIdentifier: 
+  playerSpawnPosition: {x: 1.1, y: 0, z: -53.96}
+  playerSpawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  questSpawnPosition: {x: -36.06, y: 4.19, z: -13.71}
+  questSpawnRotation: {x: 0, y: 180, z: 0}
+  prefabStage: {fileID: 8506346066935630528, guid: 6b82c4133dbbbac4196679f16ba0c270, type: 3}
+  questName: Pergi ke Kelas
+  nameDialogue:
+  - ARIE
+  - EDWAR
+  - ARIE
+  - RIZKY
+  - ARIE
+  textDialogue:
+  - WOI LU APAIN ADIK GUA!
+  - LAH KOCAK! LU SIAPA DATENG-DATENG!
+  - UDAH GUA BILANG ITU ADIK GUA
+  - LAH KOCAK, LU JANGAN IKUT CAMPUR!
+  - KOCAK-KOCAK MULU, SINI GELUD CUK!
+  character:
+  - {fileID: 21300000, guid: 0f061b4bd0275bc4eb60f2af31e7375a, type: 3}
+  - {fileID: 21300000, guid: c887ed2a931c29040bc544cd8c546e9f, type: 3}
+  - {fileID: 21300000, guid: 0f061b4bd0275bc4eb60f2af31e7375a, type: 3}
+  - {fileID: 21300000, guid: f2901efd8bb16bc408ad37f017fbf9bc, type: 3}
+  - {fileID: 21300000, guid: c887ed2a931c29040bc544cd8c546e9f, type: 3}
+  cameraPosition:
+  - {x: -0.2, y: 1.44, z: -59.88}
+  - {x: 0.08, y: 1.74, z: -60.56}
+  - {x: -0.2, y: 1.44, z: -59.88}
+  - {x: 0.08, y: 1.74, z: -60.56}
+  - {x: -0.2, y: 1.44, z: -59.88}
+  cameraRotation:
+  - {x: 0, y: 151, z: 0}
+  - {x: 10.938639, y: 19.833857, z: -0.00000043478641}
+  - {x: 0, y: 151, z: 0}
+  - {x: 10.938639, y: 19.833857, z: -0.00000043478641}
+  - {x: 0, y: 151, z: 0}

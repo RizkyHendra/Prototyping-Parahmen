@@ -8,7 +8,7 @@ public class TriggerQuest : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            DialogueSystem.Instance.StartDialogue(PlayerPrefs.GetInt("Progress"), 4);
+            DialogueSystem.Instance.StartDialogue(4);
         }
     }
 }

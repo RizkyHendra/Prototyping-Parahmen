@@ -14,6 +14,5 @@ public class LoadScened : MonoBehaviour
             PlayerPrefs.SetInt("Progress", PlayerPrefs.GetInt("Progress") + 1);
             SceneManager.LoadScene(index);
         }
-
     }
 }
