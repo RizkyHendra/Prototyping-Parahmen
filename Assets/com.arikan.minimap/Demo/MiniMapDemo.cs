@@ -3,28 +3,26 @@ using UnityEngine;
 
 public class MiniMapDemo : MonoBehaviour
 {
-    public MeshRenderer obj1Centered;
-    //public MeshRenderer obj2;
-    //public MeshRenderer obj3;
+    private MeshRenderer player;
+    private MeshRenderer questTrigger;
 
-    public Sprite obj3Sprite;
+    public Sprite objSprite;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        var minimap = FindObjectOfType<Arikan.MiniMapView>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<MeshRenderer>();
+        questTrigger = GameObject.FindGameObjectWithTag("QuestTrigger").GetComponent<MeshRenderer>();
 
-        // Red object example
-        var img = minimap.FollowCentered(obj1Centered.transform);
-        //img.color = obj1Centered.material.color;
+        var minimap = FindObjectOfType<Arikan.MiniMapView>();
 
         // Green object example
         //var img2 = minimap.Follow(obj2.transform);
         //img2.color = obj2.material.color;
 
-        // Blue object example
-        //var img3 = minimap.Follow(obj3.transform, obj3Sprite);
-        //img3.color = obj3.material.color;
+        var img = minimap.FollowCentered(player.transform);
+        img.color = Color.red;
+
+        var img3 = minimap.Follow(questTrigger.transform, objSprite);
+        img3.color = Color.yellow;
     }
 }

@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - CinemachineTarget
   - Enemy
-  - Die
+  - QuestIndicator
+  - QuestTrigger
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52ac2ede56afeb4f99d1bb729b22141, type: 3}
+  m_Name: Stage 1
+  m_EditorClassIdentifier: 
+  playerSpawnPosition: {x: 1.1, y: 0, z: -75.16}
+  playerSpawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  questSpawnPosition: {x: 0.77, y: 0, z: -60.2}
+  questSpawnRotation: {x: 0, y: 0, z: 0}
+  prefabStage: {fileID: 7243188791219169218, guid: 750dd664aca02554cab3f5c1e6256461, type: 3}
+  questName: Masuk Sekolah
+  nameDialogue:
+  - ' SATPAM 1'
+  - ARIE
+  - SATPAM 1
+  - SATPAM 2
+  - ARIE
+  textDialogue:
+  - WOI UDAH TELAT! LU GABOLEH MASUK
+  - LAH PAK, INI HARI PERTAMAKU SEKOLAH
+  - UDAH TELAT, PERATURANNYA YA GA BOLEH MASUK
+  - UDAH BALIK SANA!
+  - GAMAU TAU POKOKNYA AKU HARUS MASUK!
+  character:
+  - {fileID: 21300000, guid: 0f061b4bd0275bc4eb60f2af31e7375a, type: 3}
+  - {fileID: 21300000, guid: c887ed2a931c29040bc544cd8c546e9f, type: 3}
+  - {fileID: 21300000, guid: 0f061b4bd0275bc4eb60f2af31e7375a, type: 3}
+  - {fileID: 21300000, guid: f2901efd8bb16bc408ad37f017fbf9bc, type: 3}
+  - {fileID: 21300000, guid: c887ed2a931c29040bc544cd8c546e9f, type: 3}
+  cameraPosition:
+  - {x: 0.08, y: 1.74, z: -60.56}
+  - {x: -0.2, y: 1.44, z: -59.88}
+  - {x: 0.08, y: 1.74, z: -60.56}
+  - {x: 3.76, y: 1.44, z: -59.39}
+  - {x: -0.2, y: 1.44, z: -59.88}
+  cameraRotation:
+  - {x: 10.938639, y: 19.833857, z: -0.00000043478641}
+  - {x: 0, y: 151.02275, z: 0}
+  - {x: 10.938639, y: 19.833857, z: -0.00000043478641}
+  - {x: 0, y: -36.169, z: 0}
+  - {x: 0, y: 151.02275, z: 0}
