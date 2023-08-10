@@ -100,6 +100,10 @@ public class CombatScript : MonoBehaviour
       
        
     }
+    public void StaminaUp(float staminaUp)
+    {
+        stamina += staminaUp;
+    }
     //This function gets called whenever the player inputs the punch action
     void AttackCheck()
     {

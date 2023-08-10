@@ -34,7 +34,7 @@ public class TacticalMode : MonoBehaviour
     public bool tacticalMode;
     public bool isAiming;
     public bool usingAbility;
-    public bool dashing;
+   
 
     [Space]
 
@@ -68,7 +68,8 @@ public class TacticalMode : MonoBehaviour
     [Header("Cameras")]
     public GameObject gameCam;
     public CinemachineVirtualCamera targetCam;
-
+    [SerializeField] private Transform lastHitFocusObject;
+    [SerializeField] private GameObject lastHitCamera;
     [Space]
     public UnityEvent<EnemyScript> OnTrajectory;
     public Volume slowMotionVolume;
@@ -76,7 +77,7 @@ public class TacticalMode : MonoBehaviour
     public float VFXDir = 5;
 
     private CinemachineImpulseSource camImpulseSource;
-
+    public CombatScript stamina;
     private void Start()
     {
         
@@ -87,11 +88,7 @@ public class TacticalMode : MonoBehaviour
 
     void Update()
     {
-        if (targets.Count > 0 && !tacticalMode && !usingAbility)
-        {
-            targetIndex = NearestTargetToCenter();
-            aimObject.LookAt(targets[targetIndex]);
-        }
+       
 
        
 
@@ -115,7 +112,7 @@ public class TacticalMode : MonoBehaviour
         ModifyATB(-100);
 
         StartCoroutine(AbilityCooldown());
-
+      
         SetTacticalMode(false);
 
         //Animation
@@ -133,7 +130,7 @@ public class TacticalMode : MonoBehaviour
         StartCoroutine(AbilityCooldown());
 
         SetTacticalMode(false);
-
+        stamina.StaminaUp(100);
         //Animation
         anim.SetTrigger("Skill1");
 
@@ -177,14 +174,14 @@ public class TacticalMode : MonoBehaviour
         OnModificationATB.Invoke();
 
         atbSlider += amount;
-        atbSlider = Mathf.Clamp(atbSlider, 0, (filledAtbValue * 2));
+        atbSlider = Mathf.Clamp(atbSlider, 0, (filledAtbValue * 1));
 
         if (amount > 0)
         {
             if (atbSlider >= filledAtbValue && atbCount == 0)
                 atbCount = 1;
             if (atbSlider >= (filledAtbValue * 2) && atbCount == 1)
-                atbCount = 2;
+                atbCount = 1;
         }
         else
         {
@@ -210,10 +207,15 @@ public class TacticalMode : MonoBehaviour
 
         tacticalMode = on;
         //movement.enabled = !on;
-
+        lastHitFocusObject.position = gameObject.transform.position;
         if (!on)
         {
             SetAimCamera(false);
+            lastHitCamera.SetActive(false);
+        }
+        else
+        {
+            lastHitCamera.SetActive(true);
         }
 
         //camImpulseSource.m_ImpulseDefinition.m_AmplitudeGain = on ? 0 : 2;
