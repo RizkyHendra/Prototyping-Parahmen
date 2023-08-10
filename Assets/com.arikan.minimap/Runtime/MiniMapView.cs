@@ -14,7 +14,7 @@ namespace Arikan
         [Header("RectTransform Roots")]
         public RectTransform centeredDotCanvas;
         public RectTransform otherDotCanvas;
-        public Transform playerPosition;
+        private Transform playerPosition;
         [Header("Defult Sprite")]
         public Sprite defaultSprite;
         public Sprite floor1Map, floor2Map;
@@ -29,6 +29,11 @@ namespace Arikan
 
         private Dictionary<Transform, RectTransform> redDotMap = new Dictionary<Transform, RectTransform>();
         private KeyValuePair<Transform, RectTransform> mainMap = new KeyValuePair<Transform, RectTransform>();
+
+        private void Start()
+        {
+            playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        }
 
         private void OnEnable()
         {
