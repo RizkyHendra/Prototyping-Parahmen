@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: 1beb0de0096421f4a9c7dc74a64b6fd2
+guid: e90af9b9427822d4790f1fca33065e28
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: body_texture
-    second: {fileID: 2100000, guid: 3a270fadba66c244d8e0461aa202bbb8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: head_texture
-    second: {fileID: 2100000, guid: b41ea75a12a60074fb53f8fce7f2503d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: leg_texture
-    second: {fileID: 2100000, guid: 3ce86ad42ef53084fade81e9f72c1e17, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
