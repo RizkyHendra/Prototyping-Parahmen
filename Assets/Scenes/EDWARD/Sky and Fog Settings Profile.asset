@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5773341441252195941
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf384b154398e341b6b29969c078198, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  quality:
+    m_OverrideState: 0
+    m_Value: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 5
+  maximumVelocity:
+    m_OverrideState: 0
+    m_Value: 200
+  minimumVelocity:
+    m_OverrideState: 0
+    m_Value: 2
+  cameraMotionBlur:
+    m_OverrideState: 0
+    m_Value: 1
+  specialCameraClampMode:
+    m_OverrideState: 0
+    m_Value: 0
+  cameraVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.05
+  cameraTranslationVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.05
+  cameraRotationVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.03
+  depthComparisonExtent:
+    m_OverrideState: 0
+    m_Value: 1
+  m_SampleCount:
+    m_OverrideState: 0
+    m_Value: 4
 --- !u!114 &-3986009100223310145
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -48,6 +94,7 @@ MonoBehaviour:
   - {fileID: 994756867295931963}
   - {fileID: 586061206757190085}
   - {fileID: 8820089392297158095}
+  - {fileID: -5773341441252195941}
 --- !u!114 &586061206757190085
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -129,10 +176,10 @@ MonoBehaviour:
     m_Value: 64
   m_VolumetricFogBudget:
     m_OverrideState: 0
-    m_Value: 0.25
+    m_Value: 0.33
   m_ResolutionDepthRatio:
     m_OverrideState: 0
-    m_Value: 0.5
+    m_Value: 0.666
   directionalLightsOnly:
     m_OverrideState: 0
     m_Value: 0
@@ -297,13 +344,13 @@ MonoBehaviour:
     m_Value: 10.63
   upperHemisphereLuxValue:
     m_OverrideState: 1
-    m_Value: 0.6397491
+    m_Value: 0.030923553
   upperHemisphereLuxColor:
     m_OverrideState: 1
-    m_Value: {x: 0.25146243, y: 0.28257456, z: 0.5}
+    m_Value: {x: 0.045077503, y: 0.035770867, z: 0.5}
   desiredLuxValue:
     m_OverrideState: 1
-    m_Value: 7000
+    m_Value: 1
   updateMode:
     m_OverrideState: 0
     m_Value: 1
@@ -315,7 +362,7 @@ MonoBehaviour:
     m_Value: 0
   hdriSky:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: e3de3e8435d45a64fa4aa46634ced55a, type: 3}
+    m_Value: {fileID: 8900000, guid: b4503954fd147c94180872808dde9eb3, type: 3}
   distortionMode:
     m_OverrideState: 1
     m_Value: 1

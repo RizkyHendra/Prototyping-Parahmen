@@ -37,6 +37,7 @@ public class SpawnerStartScene : MonoBehaviour
 
     //phase 02
     Vector3 finalBridgeCamPosition;
+    GameObject finalBridgeCam;
     [Header("Camera Settings")]
     [Range(0.001f, 1f)]
     [SerializeField] float cameraDecelerationSpeed = 0.5f;
@@ -47,6 +48,8 @@ public class SpawnerStartScene : MonoBehaviour
     //phase 3
     Vector3 phase3CamPosition;
 
+    //get character
+    public GameObject character;
 
     private void Start()
     {
@@ -57,12 +60,16 @@ public class SpawnerStartScene : MonoBehaviour
 
         gamePhase = 1;
 
+        //move character
+        character.GetComponent<StarterAssets.StarterAssetsInputs>().MoveInput(new Vector2(0, 1));
     }
     private void Update()
     {
         SpawnBridge();
         MoveCamera();
         DeleteBridge();
+
+        
     }
 
     private void SpawnBridge()
@@ -104,6 +111,7 @@ public class SpawnerStartScene : MonoBehaviour
                     bridge.transform.parent = null;
                 }
                 finalBridgeCamPosition = GameObject.Find("finalBridgeCamPosition").transform.position;
+                finalBridgeCam = GameObject.Find("finalBridgeCamPosition");
                 phase3CamPosition = GameObject.Find("phase3CamPosition").transform.position;
             }
         }
@@ -124,6 +132,15 @@ public class SpawnerStartScene : MonoBehaviour
         else if (gamePhase == 2)
         {
             mainCamera.transform.position = Vector3.Lerp(mainCamera.position, finalBridgeCamPosition, cameraDecelerationSpeed * Time.deltaTime);
+            if (finalBridgeCam.GetComponent<finalLorongStopCharacter>().stop != true)
+            {
+                character.GetComponent<StarterAssets.StarterAssetsInputs>().sprint = true;
+            }
+            else
+            {
+                character.GetComponent<StarterAssets.StarterAssetsInputs>().MoveInput(new Vector2(0, 0));
+                character.GetComponent<StarterAssets.StarterAssetsInputs>().sprint = false;
+            }
         }
         else if (gamePhase == 3)
         {
@@ -154,5 +171,9 @@ public class SpawnerStartScene : MonoBehaviour
     public void NextFase()
     {
         gamePhase++;
+    }
+    public void Settings()
+    {
+
     }
 }

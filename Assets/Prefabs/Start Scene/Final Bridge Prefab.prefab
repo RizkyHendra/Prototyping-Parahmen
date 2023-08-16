@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 165436443}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: finalBridgeCamPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1895431437}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: phase3CamPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 3584602742327834381}
   - component: {fileID: 5082768060498004755}
   - component: {fileID: 246947329462407598}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Bridge A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 2434737286648614251}
   - component: {fileID: 2434737286648614250}
   - component: {fileID: 2434737286648614249}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Door (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 2434737287371555886}
   - component: {fileID: 2434737287371555885}
   - component: {fileID: 2434737287371555884}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Door (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 2511004063187399785}
   - component: {fileID: 3981705376842329436}
   - component: {fileID: 8642939221893046391}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Final Bridge Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 7223801642074898874}
   - component: {fileID: 7223801642074898875}
   - component: {fileID: 7223801642074898876}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Bridge A (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 7556706674330432109}
   - component: {fileID: 4655303277011941857}
   - component: {fileID: 2448389993645612522}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Bridge A (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 955129912221946599}
   - component: {fileID: 9046448096052657533}
   - component: {fileID: 2354574715419634362}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Bridge A (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
