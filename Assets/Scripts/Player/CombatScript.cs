@@ -20,6 +20,12 @@ public class CombatScript : MonoBehaviour
     public Slider staminaBar;
     public float dValue;
 
+    [Header("Health")]
+    public int health;
+    int maxHealth;
+    public Slider healthBar;
+
+
     [Header("Target")]
     private EnemyScript lockedTarget;
 
@@ -57,8 +63,9 @@ public class CombatScript : MonoBehaviour
         // Stamina Bar
         maxStamina = stamina;
         staminaBar.maxValue = maxStamina;
-        
-        
+
+        maxHealth = health;
+        healthBar.maxValue = maxHealth;
 
         enemyManager = FindObjectOfType<EnemyManager>();
         animator = GetComponent<Animator>();
@@ -78,6 +85,7 @@ public class CombatScript : MonoBehaviour
         }
      
         staminaBar.value = stamina;
+        healthBar.value = health;
       
     }
 
@@ -241,15 +249,15 @@ public class CombatScript : MonoBehaviour
         lockedTarget = ClosestCounterEnemy();
         OnCounterAttack.Invoke(lockedTarget);
         StartCoroutine(wow());
-        if (TargetDistance(lockedTarget) > 2)
-        {
-            Attack(lockedTarget, TargetDistance(lockedTarget));
-            return;
-        }
+        //if (TargetDistance(lockedTarget) > 2)
+        //{
+        //    Attack(lockedTarget, TargetDistance(lockedTarget));
+        //    return;
+        //}
        
         float duration = .1f;
         animator.SetTrigger("Dodge");
-        transform.DOLookAt(lockedTarget.transform.position, .1f);
+        transform.DOLookAt(lockedTarget.transform.position, .2f);
         transform.DOMove(transform.position + lockedTarget.transform.forward, duration);
 
         if (counterCoroutine != null)
@@ -303,7 +311,7 @@ public class CombatScript : MonoBehaviour
     public void DamageEvent()
     {
         animator.SetTrigger("Hit");
-
+        health -= 10;
         if (damageCoroutine != null)
             StopCoroutine(damageCoroutine);
         damageCoroutine = StartCoroutine(DamageCoroutine());
@@ -311,7 +319,7 @@ public class CombatScript : MonoBehaviour
         IEnumerator DamageCoroutine()
         {
             movementInput.enabled = false;
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(1);
             movementInput.enabled = true;
             LerpCharacterAcceleration();
         }

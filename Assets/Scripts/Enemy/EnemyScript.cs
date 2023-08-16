@@ -76,7 +76,7 @@ public class EnemyScript : MonoBehaviour
             StopMoving();
         }
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
 
         MovementCoroutine = StartCoroutine(EnemyMovement());
     }
@@ -207,7 +207,7 @@ public class EnemyScript : MonoBehaviour
         IEnumerator PrepAttack()
         {
             PrepareAttack(true);
-            yield return new WaitForSeconds(.2f);
+            yield return new WaitForSeconds(.1f);
             moveDirection = Vector3.forward;
             isMoving = true;
         }
@@ -236,9 +236,9 @@ public class EnemyScript : MonoBehaviour
         moveSpeed = 1;
 
         if (direction == Vector3.forward)
-            moveSpeed = 5;
+            moveSpeed = 7;
         if (direction == -Vector3.forward)
-            moveSpeed = 2;
+            moveSpeed = 4;
 
         //Set Animator values
         animator.SetFloat("InputMagnitude", (characterController.velocity.normalized.magnitude * direction.z) / (5 / moveSpeed), .2f, Time.deltaTime);
@@ -275,7 +275,7 @@ public class EnemyScript : MonoBehaviour
         if(Vector3.Distance(transform.position, playerCombat.transform.position) < 2)
         {
             StopMoving();
-            if (!playerCombat.isCountering && !playerCombat.isAttackingEnemy)
+            if (!playerCombat.isCountering /*&&*/ /*!playerCombat.isAttackingEnemy*/)
                 Attack();
             else
                 PrepareAttack(false);
@@ -292,6 +292,8 @@ public class EnemyScript : MonoBehaviour
     {
         if(!playerCombat.isCountering && !playerCombat.isAttackingEnemy)
             playerCombat.DamageEvent();
+        if (playerCombat.isCountering && playerCombat.isAttackingEnemy)
+            playerCombat.DamageEvent();
 
         PrepareAttack(false);
     }
@@ -300,8 +302,8 @@ public class EnemyScript : MonoBehaviour
     {
         isMoving = false;
         moveDirection = Vector3.zero;
-        if(characterController.enabled)
-            characterController.Move(moveDirection);
+        //if(characterController.enabled)
+        //    characterController.Move(moveDirection);
     }
 
     void StopEnemyCoroutines()
