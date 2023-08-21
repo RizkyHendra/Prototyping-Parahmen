@@ -236,7 +236,7 @@ public class CombatScript : MonoBehaviour
     void MoveTorwardsTarget(EnemyScript target, float duration)
     {
         OnTrajectory.Invoke(target);
-        transform.DOLookAt(target.transform.position, .1f);
+        transform.DOLookAt(target.transform.position, .2f);
         transform.DOMove(TargetOffset(target.transform), duration);
     }
 
@@ -294,7 +294,7 @@ public class CombatScript : MonoBehaviour
     {
         Vector3 position;
         position = target.position;
-        return Vector3.MoveTowards(position, transform.position, .95f);
+        return Vector3.MoveTowards(position, transform.position, .50f);
     }
 
     public void HitEvent()

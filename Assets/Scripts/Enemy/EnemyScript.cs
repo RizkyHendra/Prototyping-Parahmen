@@ -125,7 +125,7 @@ public class EnemyScript : MonoBehaviour
             }
 
             animator.SetTrigger("Hit");
-            transform.DOMove(transform.position - (transform.forward / 2), .3f).SetDelay(.1f);
+            transform.DOMove(transform.position - (transform.forward / 2), .3f).SetDelay(.5f);
 
             StopMoving();
         }
@@ -275,7 +275,7 @@ public class EnemyScript : MonoBehaviour
         if(Vector3.Distance(transform.position, playerCombat.transform.position) < 2)
         {
             StopMoving();
-            if (!playerCombat.isCountering /*&&*/ /*!playerCombat.isAttackingEnemy*/)
+            if (!playerCombat.isCountering && !playerCombat.isAttackingEnemy)
                 Attack();
             else
                 PrepareAttack(false);
@@ -302,8 +302,8 @@ public class EnemyScript : MonoBehaviour
     {
         isMoving = false;
         moveDirection = Vector3.zero;
-        //if(characterController.enabled)
-        //    characterController.Move(moveDirection);
+        if (characterController.enabled)
+            characterController.Move(moveDirection);
     }
 
     void StopEnemyCoroutines()
