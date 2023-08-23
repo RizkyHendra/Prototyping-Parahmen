@@ -210,9 +210,8 @@ MonoBehaviour:
   stagesObject:
   - {fileID: 11400000, guid: 37830d9c8379b734c8845f92568f73d9, type: 2}
   - {fileID: 11400000, guid: de845f26f0cf7854e881a2032300b05b, type: 2}
-  - {fileID: 11400000, guid: de845f26f0cf7854e881a2032300b05b, type: 2}
-  - {fileID: 11400000, guid: de845f26f0cf7854e881a2032300b05b, type: 2}
-  - {fileID: 11400000, guid: de845f26f0cf7854e881a2032300b05b, type: 2}
+  canvasUI: {fileID: 2014213770}
+  prefabsFade: {fileID: 244380593586863275, guid: 66924e48b98e97d4da6318c3b5671087, type: 3}
   currentStage: {fileID: 0}
 --- !u!114 &28874338
 MonoBehaviour:
@@ -5842,8 +5841,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -261.2713, y: -0.96552}
-  m_SizeDelta: {x: 241.0495, y: 197.011}
+  m_AnchoredPosition: {x: -382.2392, y: -0.96552}
+  m_SizeDelta: {x: 482.9855, y: 197.011}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &436804846
 MonoBehaviour:
@@ -5865,10 +5864,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem Ipsum
+  m_text: 'Lorem
+
+    Ipsum'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6543b07ce1909c44c9d028d5cb30ca4c, type: 2}
+  m_sharedMaterial: {fileID: 4022334712101066290, guid: 6543b07ce1909c44c9d028d5cb30ca4c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5902,9 +5903,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 8.8
   m_wordSpacing: 0
-  m_lineSpacing: -55.9
+  m_lineSpacing: -58.74
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

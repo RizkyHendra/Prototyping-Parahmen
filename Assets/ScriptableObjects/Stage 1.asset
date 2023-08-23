@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52ac2ede56afeb4f99d1bb729b22141, type: 3}
   m_Name: Stage 1
   m_EditorClassIdentifier: 
-  playerSpawnPosition: {x: 1.1, y: 0, z: -75.16}
-  playerSpawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  playerSpawnPosition: {x: -52.87403, y: -0.010000169, z: -57.50195}
+  playerSpawnRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   questSpawnPosition: {x: 0.77, y: 0, z: -60.2}
-  questSpawnRotation: {x: 0, y: 0, z: 0}
+  questSpawnRotation: {x: 0, y: 0, z: 0, w: 0}
   prefabStage: {fileID: 7243188791219169218, guid: 750dd664aca02554cab3f5c1e6256461, type: 3}
-  questName: Masuk Sekolah
+  questName: 'Masuk
+
+    Sekolah'
   nameDialogue:
   - ' SATPAM 1'
   - ARIE
@@ -43,8 +45,8 @@ MonoBehaviour:
   - {x: 3.76, y: 1.44, z: -59.39}
   - {x: -0.2, y: 1.44, z: -59.88}
   cameraRotation:
-  - {x: 10.938639, y: 19.833857, z: -0.00000043478641}
-  - {x: 0, y: 151.02275, z: 0}
-  - {x: 10.938639, y: 19.833857, z: -0.00000043478641}
-  - {x: 0, y: -36.169, z: 0}
-  - {x: 0, y: 151.02275, z: 0}
+  - {x: 10.938639, y: 19.833857, z: -0.00000043478641, w: -0.2}
+  - {x: 0, y: 151.02275, z: 0, w: 1.74}
+  - {x: 10.938639, y: 19.833857, z: -0.00000043478641, w: -59.39}
+  - {x: 0, y: -36.169, z: 0, w: 0}
+  - {x: 0, y: 151.02275, z: 0, w: 1.9362428e+31}

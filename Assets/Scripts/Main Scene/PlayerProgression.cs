@@ -12,6 +12,10 @@ public class PlayerProgression : MonoBehaviour
 
     [SerializeField] private StagesObject[] stagesObject;
 
+    [SerializeField] private GameObject canvasUI;
+    [SerializeField] private GameObject prefabsFade;
+
+
     public StagesObject currentStage;
 
     private Transform player;
@@ -33,6 +37,21 @@ public class PlayerProgression : MonoBehaviour
         Instantiate(currentStage.prefabStage, currentStage.questSpawnPosition, currentStage.questSpawnRotation);
 
         player.transform.position = currentStage.playerSpawnPosition;
-        textQuestUI.text = currentStage.questName;
+        player.transform.rotation = currentStage.playerSpawnRotation;
+        textQuestUI.text = currentStage.questName;    
+    }
+
+    private void Start()
+    {
+        FadeAnim("fade out");
+    }
+
+    public void FadeAnim(string name)
+    {
+        GameObject spawnedPrefab = Instantiate(prefabsFade, transform.position, Quaternion.identity);
+        spawnedPrefab.GetComponent<Animator>().Play(name);
+        spawnedPrefab.transform.parent = canvasUI.transform; // Set the spawned prefab as child of the current GameObject
+
+        Destroy(spawnedPrefab, 1.1f); // Destroy the spawned prefab after 1 second
     }
 }
