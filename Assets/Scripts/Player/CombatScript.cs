@@ -25,6 +25,11 @@ public class CombatScript : MonoBehaviour
     int maxHealth;
     public Slider healthBar;
 
+    [Header("Rage Bar")]
+    public float staminaRage;
+    float maxStaminaRage;
+    public Slider staminaBarRage;
+    public float dValueRage;
 
     [Header("Target")]
     private EnemyScript lockedTarget;
@@ -67,6 +72,9 @@ public class CombatScript : MonoBehaviour
         maxHealth = health;
         healthBar.maxValue = maxHealth;
 
+        maxStaminaRage = staminaRage;
+        staminaBarRage.maxValue = maxStaminaRage;
+
         enemyManager = FindObjectOfType<EnemyManager>();
         animator = GetComponent<Animator>();
         enemyDetection = GetComponentInChildren<EnemyDetection>();
@@ -83,18 +91,28 @@ public class CombatScript : MonoBehaviour
                 IncreseEnergy();
             }
         }
-     
+       
+        IncreseEnergyRage();
         staminaBar.value = stamina;
         healthBar.value = health;
+        staminaBarRage.value = staminaRage;
       
     }
 
-    private void DecreaseEnergey()
+    private void DecreaseEnergyStamina()
     {
         if (stamina != 0)
             stamina -= dValue;
         if (stamina <= -1)
             stamina = 0;
+    }
+
+    private void DecreaseEnergyRage()
+    {
+        if (staminaRage != 0)
+            staminaRage -= dValue;
+        if (staminaRage <= -1)
+            staminaRage = 0;
     }
     private void IncreseEnergy()
     {
@@ -108,9 +126,29 @@ public class CombatScript : MonoBehaviour
       
        
     }
+    private void IncreseEnergyRage()
+    {
+
+        staminaRage -= dValueRage * Time.deltaTime / .70f;
+        if (staminaRage >= maxStaminaRage)
+        {
+            staminaRage = maxStaminaRage;
+        }
+
+
+
+    }
+    public void RageStamina(float rageUp)
+    {
+        staminaRage += rageUp;
+    }
     public void StaminaUp(float staminaUp)
     {
         stamina += staminaUp;
+    }
+    public void HealthUp(int healthUp)
+    {
+        health += healthUp;
     }
     //This function gets called whenever the player inputs the punch action
     void AttackCheck()
@@ -149,14 +187,14 @@ public class CombatScript : MonoBehaviour
         //AttackTarget
         if(stamina > dValue)
         {
-            DecreaseEnergey();
+            DecreaseEnergyStamina();
             Attack(lockedTarget, TargetDistance(lockedTarget));
         }
      
          if(stamina < 0)
         {
             stamina = 0;
-            lockedTarget = null;
+           
         }
         
     }
@@ -175,7 +213,7 @@ public class CombatScript : MonoBehaviour
 
         if (distance < 15)
         {
-            DecreaseEnergey();
+            DecreaseEnergyStamina();
             animationCount = (int)Mathf.Repeat((float)animationCount + 1, (float)attacks.Length);
             string attackString = isLastHit() ? attacks[Random.Range(0, attacks.Length)] : attacks[animationCount];
             AttackType(attackString, attackCooldown, target, .65f);
