@@ -114,7 +114,7 @@ public class TacticalMode : MonoBehaviour
         StartCoroutine(AbilityCooldown());
       
         SetTacticalMode(false);
-
+        stamina.RageStamina(100);
         //Animation
         anim.SetTrigger("Skill1");
 
@@ -126,7 +126,7 @@ public class TacticalMode : MonoBehaviour
     public void NasiGorengPrototype()
     {
         ModifyATB(-100);
-
+        
         StartCoroutine(AbilityCooldown());
 
         SetTacticalMode(false);
@@ -142,7 +142,7 @@ public class TacticalMode : MonoBehaviour
     public void MieAyamNeon()
     {
         ModifyATB(-100);
-
+        stamina.HealthUp(100);
         StartCoroutine(AbilityCooldown());
 
         SetTacticalMode(false);
