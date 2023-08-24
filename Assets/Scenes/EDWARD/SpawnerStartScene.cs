@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.HighDefinition;
 
 public class SpawnerStartScene : MonoBehaviour
@@ -32,14 +33,15 @@ public class SpawnerStartScene : MonoBehaviour
     float cameraSpeed;
     Vector3 cameraPosition;
 
-    Ray cameraRay;
-    RaycastHit cameraRayInfo;
-    float rayDistance = 5f;
-    [SerializeField] LayerMask bridgeLayer;
+    //Ray cameraRay;
+    //RaycastHit cameraRayInfo;
+    //float rayDistance = 40f;
+    //[SerializeField] LayerMask bridgeLayer;
 
     //phase 02
     Vector3 finalBridgeCamPosition;
     GameObject finalBridgeCam;
+    public GameObject door;
     [Header("Camera Settings")]
     [Range(0.001f, 1f)]
     [SerializeField] float cameraDecelerationSpeed = 0.5f;
@@ -54,13 +56,15 @@ public class SpawnerStartScene : MonoBehaviour
     public GameObject character, characterMC;
 
     //setting
-    public GameObject settingCam;
+    public GameObject CanvasMenuObj, settingCam, fadeScreen;
 
     [Header("Volume")]
     [SerializeField] GameObject volume;
 
     private void Start()
     {
+        fadeScreen.SetActive(false);
+
         canSpawnNextBridge = true;
 
         cameraPosition = Vector3.zero;
@@ -119,6 +123,7 @@ public class SpawnerStartScene : MonoBehaviour
                 }
                 finalBridgeCamPosition = GameObject.Find("finalBridgeCamPosition").transform.position;
                 finalBridgeCam = GameObject.Find("finalBridgeCamPosition");
+                door = GameObject.Find("door_2");
                 phase3CamPosition = GameObject.Find("phase3CamPosition").transform.position;
                 settingCam = GameObject.Find("SettingCamera");
                 
@@ -148,6 +153,7 @@ public class SpawnerStartScene : MonoBehaviour
             }
             else
             {
+                CanvasMenuObj.SetActive(true);
                 character.GetComponent<StarterAssets.StarterAssetsInputs>().MoveInput(new Vector2(0, 0));
                 character.GetComponent<StarterAssets.StarterAssetsInputs>().sprint = false;
 
@@ -156,28 +162,46 @@ public class SpawnerStartScene : MonoBehaviour
         }
         else if (gamePhase == 3)
         {
+            door.GetComponent<Animator>().SetBool("character_nearby", true);
             mainCamera.transform.position = Vector3.Lerp(mainCamera.position, phase3CamPosition, cameraDecelerationSpeed * Time.deltaTime);
+            StartCoroutine(DelayLoadScene());
         }
     }
 
+    private IEnumerator DelayLoadScene()
+    {
+        yield return new WaitForSeconds(2);
+        fadeScreen.SetActive(true);
+        fadeScreen.GetComponent<Animator>().Play("fade in");
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(1);
+    }
+
+
     private void DeleteBridge()
     {
-        cameraRay.origin = mainCamera.transform.position;
-        cameraRay.direction = -mainCamera.transform.up;
-
-        Debug.DrawLine(cameraRay.origin, cameraRay.origin + (cameraRay.direction * rayDistance), Color.red);
-
-        if (Physics.Raycast(cameraRay.origin, cameraRay.direction, out cameraRayInfo, rayDistance, bridgeLayer))
+        if (bridges.Count>=20)
         {
-            if (bridges.Contains(cameraRayInfo.collider.gameObject))
-            {
-                if (bridges.IndexOf(cameraRayInfo.collider.gameObject)>0)
-                {
-                    Destroy(bridges[0]);
-                    bridges.RemoveAt(0);
-                }
-            }
+            Destroy(bridges[0]);
+            bridges.RemoveAt(0);
         }
+
+        //cameraRay.origin = mainCamera.transform.position;
+        //cameraRay.direction = -mainCamera.transform.forward;
+
+        //Debug.DrawLine(cameraRay.origin, cameraRay.origin + (cameraRay.direction * rayDistance), Color.red);
+
+        //if (Physics.Raycast(cameraRay.origin, cameraRay.direction, out cameraRayInfo, rayDistance, bridgeLayer))
+        //{
+        //    if (bridges.Contains(cameraRayInfo.collider.gameObject))
+        //    {
+        //        if (bridges.IndexOf(cameraRayInfo.collider.gameObject)>0)
+        //        {
+        //            Destroy(bridges[0]);
+        //            bridges.RemoveAt(0);
+        //        }
+        //    }
+        //}
     }
 
     public void NextFase()

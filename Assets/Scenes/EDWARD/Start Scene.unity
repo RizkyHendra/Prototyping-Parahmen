@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2269.52, g: 3948.8022, b: 5247.5625, a: 1}
+  m_IndirectSpecularColor: {r: 180.60371, g: 205.24889, b: 256.7474, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1210,6 +1210,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   cameraDecelerationSpeed: 0.5
+  character: {fileID: 0}
+  characterMC: {fileID: 0}
+  settingCam: {fileID: 0}
+  volume: {fileID: 0}
 --- !u!1001 &957511686
 PrefabInstance:
   m_ObjectHideFlags: 0
