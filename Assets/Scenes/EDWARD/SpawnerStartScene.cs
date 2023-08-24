@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 
 public class SpawnerStartScene : MonoBehaviour
 {
@@ -49,7 +51,13 @@ public class SpawnerStartScene : MonoBehaviour
     Vector3 phase3CamPosition;
 
     //get character
-    public GameObject character;
+    public GameObject character, characterMC;
+
+    //setting
+    public GameObject settingCam;
+
+    [Header("Volume")]
+    [SerializeField] GameObject volume;
 
     private void Start()
     {
@@ -62,14 +70,13 @@ public class SpawnerStartScene : MonoBehaviour
 
         //move character
         character.GetComponent<StarterAssets.StarterAssetsInputs>().MoveInput(new Vector2(0, 1));
+        characterMC.GetComponent<MovementInput>().moveAxis = new Vector2(0, 1);
     }
     private void Update()
     {
         SpawnBridge();
         MoveCamera();
-        DeleteBridge();
-
-        
+        DeleteBridge(); 
     }
 
     private void SpawnBridge()
@@ -113,6 +120,8 @@ public class SpawnerStartScene : MonoBehaviour
                 finalBridgeCamPosition = GameObject.Find("finalBridgeCamPosition").transform.position;
                 finalBridgeCam = GameObject.Find("finalBridgeCamPosition");
                 phase3CamPosition = GameObject.Find("phase3CamPosition").transform.position;
+                settingCam = GameObject.Find("SettingCamera");
+                
             }
         }
     }
@@ -135,11 +144,14 @@ public class SpawnerStartScene : MonoBehaviour
             if (finalBridgeCam.GetComponent<finalLorongStopCharacter>().stop != true)
             {
                 character.GetComponent<StarterAssets.StarterAssetsInputs>().sprint = true;
+                characterMC.GetComponent<MovementInput>().moveAxis = new Vector2(0, 3);
             }
             else
             {
                 character.GetComponent<StarterAssets.StarterAssetsInputs>().MoveInput(new Vector2(0, 0));
                 character.GetComponent<StarterAssets.StarterAssetsInputs>().sprint = false;
+
+                characterMC.GetComponent<MovementInput>().moveAxis = new Vector2(0, 0);
             }
         }
         else if (gamePhase == 3)
@@ -175,5 +187,21 @@ public class SpawnerStartScene : MonoBehaviour
     public void Settings()
     {
 
+        //mainCamera.GetComponent<Animator>().SetBool("Setting", true);
+        //gamePhase = 10;
+        //mainCamera.transform.position = Vector3.Lerp(mainCamera.position, finalBridgeCam.transform.position, cameraDecelerationSpeed * Time.deltaTime);
+        //mainCamera.transform.rotation = Quaternion.Lerp(mainCamera.rotation, finalBridgeCam.transform.rotation, cameraDecelerationSpeed * Time.deltaTime);
+        settingCam.GetComponent<Camera>().enabled = true;
+
+        DepthOfField dof;
+        volume.GetComponent<Volume>().profile.TryGet<DepthOfField>(out dof);
+        dof.active = true;
+    }
+    public void SettingsOff()
+    {
+        settingCam.GetComponent<Camera>().enabled = false;
+        DepthOfField dof;
+        volume.GetComponent<Volume>().profile.TryGet<DepthOfField>(out dof);
+        dof.active = false;
     }
 }
