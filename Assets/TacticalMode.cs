@@ -115,6 +115,7 @@ public class TacticalMode : MonoBehaviour
       
         SetTacticalMode(false);
         stamina.RageStamina(100);
+        
         //Animation
         anim.SetTrigger("Skill1");
 

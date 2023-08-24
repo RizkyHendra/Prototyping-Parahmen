@@ -4,9 +4,11 @@ using UnityEngine.Events;
 using DG.Tweening;
 using Cinemachine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CombatScript : MonoBehaviour
 {
+    
     public TacticalMode tacticalMode;
     private EnemyManager enemyManager;
     private EnemyDetection enemyDetection;
@@ -14,6 +16,8 @@ public class CombatScript : MonoBehaviour
     private Animator animator;
     private CinemachineImpulseSource impulseSource;
 
+    [Header("Scenemanager Game")]
+    public string MainMenu;
     [Header("Stamina Bar")]
     public float stamina;
     float maxStamina;
@@ -24,12 +28,14 @@ public class CombatScript : MonoBehaviour
     public int health;
     int maxHealth;
     public Slider healthBar;
+    public GameObject LosePanel;
 
     [Header("Rage Bar")]
     public float staminaRage;
     float maxStaminaRage;
     public Slider staminaBarRage;
     public float dValueRage;
+    public GameObject particelEffect1;
 
     [Header("Target")]
     private EnemyScript lockedTarget;
@@ -40,13 +46,13 @@ public class CombatScript : MonoBehaviour
     [Header("States")]
     public bool isAttackingEnemy = false;
     public bool isCountering = false;
-
     [Header("Public References")]
     [SerializeField] private Transform punchPosition;
     [SerializeField] private ParticleSystemScript punchParticle;
     [SerializeField] private GameObject lastHitCamera;
     [SerializeField] private GameObject CounterCamera;
     [SerializeField] private Transform lastHitFocusObject;
+    [SerializeField] private GameObject WinPanel;
 
     //Coroutines
     private Coroutine counterCoroutine;
@@ -72,8 +78,8 @@ public class CombatScript : MonoBehaviour
         maxHealth = health;
         healthBar.maxValue = maxHealth;
 
-        maxStaminaRage = staminaRage;
-        staminaBarRage.maxValue = maxStaminaRage;
+       
+        staminaBarRage.value = 0;
 
         enemyManager = FindObjectOfType<EnemyManager>();
         animator = GetComponent<Animator>();
@@ -96,6 +102,16 @@ public class CombatScript : MonoBehaviour
         staminaBar.value = stamina;
         healthBar.value = health;
         staminaBarRage.value = staminaRage;
+
+        if(health == 0)
+        {
+            LosePanel.SetActive(true);
+
+        }
+        if(staminaRage <= 0)
+        {
+            staminaRage = 0;
+        }
       
     }
 
@@ -123,16 +139,19 @@ public class CombatScript : MonoBehaviour
             stamina = maxStamina;
         }
 
-      
-       
     }
     private void IncreseEnergyRage()
     {
 
         staminaRage -= dValueRage * Time.deltaTime / .70f;
-        if (staminaRage >= maxStaminaRage)
+        if (staminaRage <= 0)
         {
-            staminaRage = maxStaminaRage;
+            particelEffect1.SetActive(false);
+            staminaRage = 0;
+        }
+        else
+        {
+            particelEffect1.SetActive(true);
         }
 
 
@@ -141,6 +160,7 @@ public class CombatScript : MonoBehaviour
     public void RageStamina(float rageUp)
     {
         staminaRage += rageUp;
+        
     }
     public void StaminaUp(float staminaUp)
     {
@@ -156,12 +176,6 @@ public class CombatScript : MonoBehaviour
         if (isAttackingEnemy )
 
             return;
-
-       
-
-
-      
-
         //Check to see if the detection behavior has an enemy set
         if (enemyDetection.CurrentTarget() == null)
         {
@@ -198,12 +212,10 @@ public class CombatScript : MonoBehaviour
         }
         
     }
-
     public void Attack(EnemyScript target, float distance)
     {
         //Types of attack animation
         attacks = new string[] { "AirKick", "AirKick2", "AirPunch", "AirKick3" };
-
         //Attack nothing in case target is null
         if (target == null)
         {
@@ -224,12 +236,9 @@ public class CombatScript : MonoBehaviour
             lockedTarget = null;
             AttackType("GroundPunch", .2f, null, 0);
         }
-
         //Change impulse
         impulseSource.m_ImpulseDefinition.m_AmplitudeGain = Mathf.Max(3, 1 * distance);
-
     }
-
     void AttackType(string attackTrigger, float cooldown, EnemyScript target, float movementDuration)
     {
         animator.SetTrigger(attackTrigger);
@@ -259,16 +268,31 @@ public class CombatScript : MonoBehaviour
             movementInput.enabled = true;
             LerpCharacterAcceleration();
         }
-
          IEnumerator FinalBlowCoroutine()
         {
             Time.timeScale = .5f;
             lastHitCamera.SetActive(true);
             lastHitFocusObject.position = lockedTarget.transform.position;
             yield return new WaitForSecondsRealtime(2);
+            // Game Win
+            
             lastHitCamera.SetActive(false);
             Time.timeScale = 1f;
+            
+            yield return new WaitForSecondsRealtime(2);
+            WinPanel.SetActive(true);
+            
         }
+    }
+
+    public void SceneMainMenu()
+    {
+        SceneManager.LoadScene(MainMenu);
+    }
+
+    public void SceneRetri()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void MoveTorwardsTarget(EnemyScript target, float duration)
