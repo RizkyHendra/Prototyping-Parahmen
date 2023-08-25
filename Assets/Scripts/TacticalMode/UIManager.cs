@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
-
+    public GameObject fadeToBlack;
     private TacticalMode gameScript;
     public Image test;
     public CanvasGroup tacticalCanvas;
@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
     public Image atbCompleteRight;
     void Start()
     {
-
+        StartCoroutine(fadeToBlackk());
         gameScript = FindObjectOfType<TacticalMode>();
         gameScript.OnAttack.AddListener(() => AttackAction());
         gameScript.OnModificationATB.AddListener(() => UpdateSlider());
@@ -107,6 +107,11 @@ public class UIManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(on ? targetGroup.GetChild(0).gameObject : commandsGroup.GetChild(0).gameObject);
     }
 
-
-
+    private IEnumerator fadeToBlackk()
+    {
+        fadeToBlack.SetActive(true);
+        fadeToBlack.GetComponent<Animator>().Play("fade out");
+        yield return new WaitForSeconds(3);
+        fadeToBlack.SetActive(false);
+    }
 }
