@@ -279,7 +279,7 @@ public class CombatScript : MonoBehaviour
             lastHitCamera.SetActive(false);
             Time.timeScale = 1f;
             
-            yield return new WaitForSecondsRealtime(2);
+            yield return new WaitForSecondsRealtime(5);
             WinPanel.SetActive(true);
             
         }
