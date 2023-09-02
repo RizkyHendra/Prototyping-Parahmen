@@ -15,6 +15,9 @@ public class PlayerProgression : MonoBehaviour
     [SerializeField] private GameObject canvasUI;
     [SerializeField] private GameObject prefabsFade;
 
+    [SerializeField] private GameObject popUpQuest, questName;
+    [SerializeField] private TextMeshProUGUI popUpQuestText;
+
 
     public StagesObject currentStage;
 
@@ -44,6 +47,7 @@ public class PlayerProgression : MonoBehaviour
     private void Start()
     {
         StartCoroutine(FadeAnim("fade out"));
+        StartCoroutine(PopUpQuest());
         
     }
 
@@ -53,5 +57,22 @@ public class PlayerProgression : MonoBehaviour
         prefabsFade.GetComponent<Animator>().Play(name);
         yield return new WaitForSeconds(1f);
         prefabsFade.SetActive(false);
+    }
+
+    private IEnumerator PopUpQuest()
+    {
+        popUpQuest.SetActive(false);
+        popUpQuestText.text = currentStage.PopUpQuestName;
+        yield return new WaitForSeconds(3f);
+        Time.timeScale = 0.2f;
+        popUpQuest.SetActive(true);
+        popUpQuest.GetComponent<Animator>().Play("popupquest");
+        popUpQuest.GetComponent<Animator>().speed = 1 * 5f;
+        questName.GetComponent<Animator>().speed = 1 * 5f;
+
+        yield return new WaitForSeconds(3f/5f);
+        Time.timeScale = 1f;
+        popUpQuest.SetActive(false);
+        questName.GetComponent<Animator>().speed = 1;
     }
 }

@@ -17,6 +17,7 @@ public class StagesObject : ScriptableObject
     public Quaternion playerDialogueRotatation;
     public GameObject prefabStage;
     [TextArea] public string questName;
+    public string PopUpQuestName;
 
     [Header("Dialogue")]
     public string[] nameDialogue;

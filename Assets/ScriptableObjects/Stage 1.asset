@@ -22,6 +22,7 @@ MonoBehaviour:
   questName: 'Masuk
 
     Sekolah'
+  PopUpQuestName: MASUK SEKOLAH !
   nameDialogue:
   - ' SATPAM 1'
   - WAWAN
