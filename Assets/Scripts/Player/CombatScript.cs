@@ -20,19 +20,21 @@ public class CombatScript : MonoBehaviour
     public string MainMenu;
     [Header("Stamina Bar")]
     public float stamina;
+    public Image staminaImageBar;
     float maxStamina;
     public Slider staminaBar;
     public float dValue;
 
     [Header("Health")]
-    public int health;
-    int maxHealth;
+    public float health;
+    float maxHealth;
     public Slider healthBar;
+    public Image healthImageBar;
     public GameObject LosePanel;
 
     [Header("Rage Bar")]
     public float staminaRage;
-    float maxStaminaRage;
+    public Image barImageFill;
     public Slider staminaBarRage;
     public float dValueRage;
     public GameObject particelEffect1;
@@ -75,6 +77,7 @@ public class CombatScript : MonoBehaviour
         maxStamina = stamina;
         staminaBar.maxValue = maxStamina;
 
+
         maxHealth = health;
         healthBar.maxValue = maxHealth;
 
@@ -100,8 +103,11 @@ public class CombatScript : MonoBehaviour
        
         IncreseEnergyRage();
         staminaBar.value = stamina;
+        staminaImageBar.fillAmount = stamina / maxStamina;
         healthBar.value = health;
+        healthImageBar.fillAmount = health / maxHealth;
         staminaBarRage.value = staminaRage;
+        barImageFill.fillAmount = staminaRage/100;
 
         if(health == 0)
         {
@@ -142,7 +148,7 @@ public class CombatScript : MonoBehaviour
     }
     private void IncreseEnergyRage()
     {
-
+        
         staminaRage -= dValueRage * Time.deltaTime / .70f;
         if (staminaRage <= 0)
         {

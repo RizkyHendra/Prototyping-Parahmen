@@ -6,6 +6,7 @@ using UnityEngine.VFX;
 using Cinemachine;
 using UnityEngine.Rendering;
 using DG.Tweening;
+using UnityEngine.UI;
 
 
 [System.Serializable] public class GameEvent : UnityEvent { }
@@ -41,6 +42,7 @@ public class TacticalMode : MonoBehaviour
     [Header("ATB Data")]
     public float atbSlider;
     public float filledAtbValue = 100;
+    public Image barBoostValue;
     public int atbCount;
 
     [Space]
@@ -88,11 +90,11 @@ public class TacticalMode : MonoBehaviour
 
     void Update()
     {
-       
-
-       
 
 
+
+
+        barBoostValue.fillAmount = atbSlider / 100;
         if (Input.GetMouseButtonDown(1) && !usingAbility)
         {
             if (atbCount > 0 && !tacticalMode)
@@ -173,7 +175,7 @@ public class TacticalMode : MonoBehaviour
     public void ModifyATB(float amount)
     {
         OnModificationATB.Invoke();
-
+        
         atbSlider += amount;
         atbSlider = Mathf.Clamp(atbSlider, 0, (filledAtbValue * 1));
 
