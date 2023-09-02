@@ -10,15 +10,16 @@ public class DialogueSystem : MonoBehaviour
 {
     public static DialogueSystem Instance;
 
-    [SerializeField] private TextMeshProUGUI textDialogue;
-    [SerializeField] private TextMeshProUGUI nameDialogue;
-    [SerializeField] private Image characterImage;
+    [SerializeField] private TextMeshProUGUI[] textDialogue;
+    [SerializeField] private TextMeshProUGUI[] nameDialogue;
+    [SerializeField] private Image[] characterImage;
 
-    [SerializeField] private GameObject dialogueObj, GUIObj, dialogueBorderObj, dialogueCamera;
+    [SerializeField] private GameObject GUIObj, dialogueBorderObj, dialogueCamera;
+    [SerializeField] private GameObject[] dialoguePanel;
 
     [SerializeField] private Animator animFade;
     [SerializeField] private float textSpeed;
-    private GameObject player;
+    public GameObject player;
     public bool onDialogueScene;
 
     private int index;
@@ -44,7 +45,10 @@ public class DialogueSystem : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         onDialogueScene = false;
 
-        dialogueObj.SetActive(false);
+        for (int i = 0; i < dialoguePanel.Length; i++)
+        {
+            dialoguePanel[i].SetActive(false);
+        }
         dialogueBorderObj.SetActive(false);
         dialogueCamera.SetActive(false);
         GUIObj.SetActive(true);
@@ -56,25 +60,44 @@ public class DialogueSystem : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (textDialogue.text == currentStage.textDialogue[index])
+                if (textDialogue[0].text == currentStage.textDialogue[index])
                 {
                     NextLine();
-                    nameDialogue.text = currentStage.nameDialogue[index];
-                    characterImage.sprite = currentStage.character[index];
+
+                    if (onDialogueScene)
+                    {
+                        if (currentStage.dialogueType[index] == 0)
+                        {
+                            StartCoroutine(delayActiveDialogueLeft(0.1f));
+                        }
+                        else if (currentStage.dialogueType[index] == 1)
+                        {
+                            StartCoroutine(delayActiveDialogueRight(0.1f));
+                        }
+                    }
+
+                    nameDialogue[0].text = currentStage.nameDialogue[index];
+                    nameDialogue[1].text = currentStage.nameDialogue[index];
+                    characterImage[0].sprite = currentStage.character[index];
+                    characterImage[1].sprite = currentStage.character[index];
                     dialogueCamera.transform.SetLocalPositionAndRotation(currentStage.cameraPosition[index], currentStage.cameraRotation[index]);
                 }
                 else
                 {
                     StopAllCoroutines();
-                    textDialogue.text = currentStage.textDialogue[index];
+                    textDialogue[0].text = currentStage.textDialogue[index];
+                    textDialogue[1].text = currentStage.textDialogue[index];
                 }
             }
+
+            player.transform.rotation = currentStage.playerDialogueRotatation;
         }
+
+        
     }
 
     public void StartDialogue(int loadScene)
     {
-        dialogueObj.SetActive(true);
         dialogueBorderObj.SetActive(true);
         dialogueCamera.SetActive(true);
         GUIObj.SetActive(false);
@@ -82,10 +105,28 @@ public class DialogueSystem : MonoBehaviour
 
         index = 0;
         loadSceneIndex = loadScene;
-        textDialogue.text = string.Empty;
 
-        nameDialogue.text = currentStage.nameDialogue[index];
-        characterImage.sprite = currentStage.character[index];
+        if(onDialogueScene)
+        {
+            if (currentStage.dialogueType[index] == 0)
+            {
+                StartCoroutine(delayActiveDialogueLeft(0.1f));
+            }
+            else if (currentStage.dialogueType[index] == 1)
+            {
+                StartCoroutine(delayActiveDialogueRight(0.1f));
+            }
+        }
+
+        textDialogue[0].text = string.Empty;
+        textDialogue[1].text = string.Empty;
+
+        nameDialogue[0].text = currentStage.nameDialogue[index];
+        nameDialogue[1].text = currentStage.nameDialogue[index];
+
+        characterImage[0].sprite = currentStage.character[index];
+        characterImage[1].sprite = currentStage.character[index];
+
         dialogueCamera.transform.SetLocalPositionAndRotation(currentStage.cameraPosition[index], currentStage.cameraRotation[index]);
 
         player.GetComponent<PlayerInput>().DeactivateInput();
@@ -96,23 +137,28 @@ public class DialogueSystem : MonoBehaviour
     {
         foreach (char c in currentStage.textDialogue[index].ToCharArray())
         {
-            textDialogue.text += c;
+            textDialogue[0].text += c;
+            textDialogue[1].text += c;
             yield return new WaitForSeconds(textSpeed);
         }
     }
 
     void NextLine()
     {
-        if (index < currentStage.textDialogue.Length - 1)
+        if (index < currentStage.textDialogue.Length -1)
         {
             index++;
-            Debug.Log("tes");
-            textDialogue.text = string.Empty;
+            Debug.Log(index);
+            textDialogue[0].text = string.Empty;
+            textDialogue[1].text = string.Empty;
             StartCoroutine(TypeLine());
         }
         else
         {
-            dialogueObj.SetActive(false);
+            for (int i = 0; i < dialoguePanel.Length; i++)
+            {
+                dialoguePanel[i].SetActive(false);
+            }
             dialogueBorderObj.SetActive(false);
             dialogueCamera.SetActive(false);
             GUIObj.SetActive(true);
@@ -128,5 +174,25 @@ public class DialogueSystem : MonoBehaviour
         animFade.Play("fade");
         yield return new WaitForSecondsRealtime(time);
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    private IEnumerator delayActiveDialogueLeft(float time)
+    {
+        dialoguePanel[0].SetActive(false);
+        dialoguePanel[1].SetActive(false);
+        yield return new WaitForSecondsRealtime(time);
+        dialoguePanel[0].SetActive(true);
+        dialoguePanel[0].GetComponent<Animator>().Play("dialogue left");
+        dialoguePanel[1].GetComponent<Animator>().Play("dialogue right");
+    }
+
+    private IEnumerator delayActiveDialogueRight(float time)
+    {
+        dialoguePanel[0].SetActive(false);
+        dialoguePanel[1].SetActive(false);
+        yield return new WaitForSecondsRealtime(time);
+        dialoguePanel[1].SetActive(true);
+        dialoguePanel[0].GetComponent<Animator>().Play("dialogue left");
+        dialoguePanel[1].GetComponent<Animator>().Play("dialogue right");
     }
 }

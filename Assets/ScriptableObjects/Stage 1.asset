@@ -16,16 +16,18 @@ MonoBehaviour:
   playerSpawnRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   questSpawnPosition: {x: 0.77, y: 0, z: -60.2}
   questSpawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  playerDialoguePosition: {x: 1.22, y: -0.010000229, z: -62.305965}
+  playerDialogueRotatation: {x: 0, y: 0.34202012, z: 0, w: 0.9396926}
   prefabStage: {fileID: 7243188791219169218, guid: 750dd664aca02554cab3f5c1e6256461, type: 3}
   questName: 'Masuk
 
     Sekolah'
   nameDialogue:
   - ' SATPAM 1'
-  - ARIE
+  - WAWAN
   - SATPAM 1
   - SATPAM 2
-  - ARIE
+  - WAWAN
   textDialogue:
   - WOI UDAH TELAT! LU GABOLEH MASUK
   - LAH PAK, INI HARI PERTAMAKU SEKOLAH
@@ -33,20 +35,21 @@ MonoBehaviour:
   - UDAH BALIK SANA!
   - GAMAU TAU POKOKNYA AKU HARUS MASUK!
   character:
-  - {fileID: 21300000, guid: 0f061b4bd0275bc4eb60f2af31e7375a, type: 3}
-  - {fileID: 21300000, guid: c887ed2a931c29040bc544cd8c546e9f, type: 3}
-  - {fileID: 21300000, guid: 0f061b4bd0275bc4eb60f2af31e7375a, type: 3}
-  - {fileID: 21300000, guid: f2901efd8bb16bc408ad37f017fbf9bc, type: 3}
-  - {fileID: 21300000, guid: c887ed2a931c29040bc544cd8c546e9f, type: 3}
+  - {fileID: 21300000, guid: c96257f6bcd6eb84fb74546b656c20ff, type: 3}
+  - {fileID: 21300000, guid: 2ec1c1499f38aea4387a65bba58c8478, type: 3}
+  - {fileID: 21300000, guid: c96257f6bcd6eb84fb74546b656c20ff, type: 3}
+  - {fileID: 21300000, guid: c96257f6bcd6eb84fb74546b656c20ff, type: 3}
+  - {fileID: 21300000, guid: 2ec1c1499f38aea4387a65bba58c8478, type: 3}
   cameraPosition:
-  - {x: 0.08, y: 1.74, z: -60.56}
-  - {x: -0.2, y: 1.44, z: -59.88}
-  - {x: 0.08, y: 1.74, z: -60.56}
-  - {x: 3.76, y: 1.44, z: -59.39}
-  - {x: -0.2, y: 1.44, z: -59.88}
+  - {x: 0.61, y: 1.35, z: -60.79}
+  - {x: 1.4, y: 1.36, z: -60.54}
+  - {x: 0.61, y: 1.35, z: -60.79}
+  - {x: 2.56, y: 1.35, z: -59.59}
+  - {x: 1.4, y: 1.36, z: -60.54}
   cameraRotation:
-  - {x: 10.938639, y: 19.833857, z: -0.00000043478641, w: -0.2}
-  - {x: 0, y: 151.02275, z: 0, w: 1.74}
-  - {x: 10.938639, y: 19.833857, z: -0.00000043478641, w: -59.39}
-  - {x: 0, y: -36.169, z: 0, w: 0}
-  - {x: 0, y: 151.02275, z: 0, w: 1.9362428e+31}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  - {x: 0, y: 0, z: 0, w: 1}
+  - {x: 0, y: -0.25881904, z: 0, w: 0.9659258}
+  - {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  dialogueType: 0000000001000000000000000000000001000000

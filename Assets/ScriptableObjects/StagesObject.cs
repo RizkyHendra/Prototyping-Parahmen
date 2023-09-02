@@ -13,6 +13,8 @@ public class StagesObject : ScriptableObject
     [Header("Quest")]
     public Vector3 questSpawnPosition;
     public Quaternion questSpawnRotation;
+    public Vector3 playerDialoguePosition;
+    public Quaternion playerDialogueRotatation;
     public GameObject prefabStage;
     [TextArea] public string questName;
 
@@ -22,4 +24,5 @@ public class StagesObject : ScriptableObject
     public Sprite[] character;
     public Vector3[] cameraPosition;
     public Quaternion[] cameraRotation;
+    public int[] dialogueType;
 }
