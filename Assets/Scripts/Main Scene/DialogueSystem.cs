@@ -20,6 +20,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private Animator animFade;
     [SerializeField] private float textSpeed;
     public GameObject player;
+    public GameObject stuntMan;
     public bool onDialogueScene;
 
     private int index;
@@ -41,6 +42,7 @@ public class DialogueSystem : MonoBehaviour
     void Start()
     {
         currentStage = PlayerProgression.Instance.currentStage;
+        stuntMan.SetActive(false);
 
         player = GameObject.FindGameObjectWithTag("Player");
         onDialogueScene = false;
@@ -90,14 +92,16 @@ public class DialogueSystem : MonoBehaviour
                 }
             }
 
-            player.transform.rotation = currentStage.playerDialogueRotatation;
+            stuntMan.SetActive(true);
+            stuntMan.transform.position = currentStage.playerDialoguePosition;
+            stuntMan.transform.rotation = currentStage.playerDialogueRotatation;
         }
-
-        
     }
 
     public void StartDialogue(int loadScene)
     {
+        StartCoroutine(PlayerProgression.Instance.FadeAnim("fade out"));
+
         dialogueBorderObj.SetActive(true);
         dialogueCamera.SetActive(true);
         GUIObj.SetActive(false);
@@ -161,9 +165,10 @@ public class DialogueSystem : MonoBehaviour
             }
             dialogueBorderObj.SetActive(false);
             dialogueCamera.SetActive(false);
-            GUIObj.SetActive(true);
-            player.GetComponent<PlayerInput>().ActivateInput();
+            GUIObj.SetActive(false);
+            //player.GetComponent<PlayerInput>().ActivateInput();
             onDialogueScene = false;
+            stuntMan.SetActive(false);
 
             StartCoroutine(fadeScreen(1f, loadSceneIndex));
         }

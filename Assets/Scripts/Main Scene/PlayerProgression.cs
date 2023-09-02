@@ -43,15 +43,15 @@ public class PlayerProgression : MonoBehaviour
 
     private void Start()
     {
-        FadeAnim("fade out");
+        StartCoroutine(FadeAnim("fade out"));
+        
     }
 
-    public void FadeAnim(string name)
+    public IEnumerator FadeAnim(string name)
     {
-        GameObject spawnedPrefab = Instantiate(prefabsFade, transform.position, Quaternion.identity);
-        spawnedPrefab.GetComponent<Animator>().Play(name);
-        spawnedPrefab.transform.parent = canvasUI.transform; // Set the spawned prefab as child of the current GameObject
-
-        Destroy(spawnedPrefab, 1.1f); // Destroy the spawned prefab after 1 second
+        prefabsFade.SetActive(true);
+        prefabsFade.GetComponent<Animator>().Play(name);
+        yield return new WaitForSeconds(1f);
+        prefabsFade.SetActive(false);
     }
 }

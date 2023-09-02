@@ -69,6 +69,7 @@ public class PauseManager : MonoBehaviour
     public void LoadToScene(int index)
     {
         SceneManager.LoadScene(index);
+        Time.timeScale = 1;
     }
 
     public void ResumeButton()

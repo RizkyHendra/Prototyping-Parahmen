@@ -8,6 +8,7 @@ public class CutsceneController : MonoBehaviour
 {
     public PlayableDirector cutsceneTimeline;
     public string gameplaySceneName;
+    public GameObject fadeEffect;
 
     private bool isCutsceneFinished = false;
 
@@ -29,10 +30,23 @@ public class CutsceneController : MonoBehaviour
         {
             LoadGameplayScene();
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            StartCoroutine(delayFade());
+        }
     }
 
     void LoadGameplayScene()
     {
         SceneManager.LoadScene(gameplaySceneName);
+    }
+
+    IEnumerator delayFade()
+    {
+        fadeEffect.SetActive(true);
+        fadeEffect.GetComponent<Animator>().Play("fade in");
+        yield return new WaitForSeconds(1f);
+        LoadGameplayScene();
     }
 }
