@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DANY/TempEnvironment.unity
     guid: 049ec42e8d9242b48b86b084411c84a6
   - enabled: 1
-    path: Assets/Scenes/Rizky/Fight.unity
+    path: Assets/Scenes/Rizky/Rizky-Fight.unity
     guid: e18487c86b8c40e42b7b7f2168060ea8
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
