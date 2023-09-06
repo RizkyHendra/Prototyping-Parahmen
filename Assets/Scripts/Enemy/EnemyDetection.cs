@@ -12,14 +12,23 @@ public class EnemyDetection : MonoBehaviour
     [SerializeField] private EnemyScript currentTarget;
 
     [SerializeField] private GameObject enemyTargetMarker;
-    public int targetIndex;
+    public int currentEnemyIndex;
 
     public GameObject cam;
 
     private void Start()
     {
         movementInput = GetComponentInParent<MovementInput>();
-        targetIndex = 0;
+        currentEnemyIndex = 0;
+
+        for (int i = 0; i < enemyManager.allEnemies.Length; i++)
+        {
+            if (enemyManager.allEnemies[i].enemyAvailability)
+            {
+                currentEnemyIndex = i;
+                break;
+            }
+        }
     }
 
     private void Update()
@@ -45,22 +54,19 @@ public class EnemyDetection : MonoBehaviour
                 currentTarget = info.collider.transform.GetComponent<EnemyScript>();
         }*/
 
-        if(Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            targetIndex += 1;
-            if (targetIndex >= enemyManager.allEnemies.Length)
+            int originalIndex = currentEnemyIndex;
+            do
             {
-                targetIndex = 0;
-            }
+                currentEnemyIndex = (currentEnemyIndex + 1) % enemyManager.allEnemies.Length;
+                if (currentEnemyIndex == originalIndex)
+                {
+                    break;
+                }
+            } while (!enemyManager.allEnemies[currentEnemyIndex].enemyAvailability);
 
-            if(enemyManager.allEnemies[targetIndex].enemyAvailability == true)
-            {
-                currentTarget = enemyManager.allEnemies[targetIndex].enemyScript;
-            }
-            else
-            {
-                targetIndex += 1;
-            }
+            currentTarget = enemyManager.allEnemies[currentEnemyIndex].enemyScript;
         }
 
         SetMarketTarget();
