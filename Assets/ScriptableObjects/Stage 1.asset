@@ -27,21 +27,44 @@ MonoBehaviour:
   - ' SATPAM 1'
   - WAWAN
   - SATPAM 1
+  - WAWAN
+  - SATPAM 1
   - SATPAM 2
   - WAWAN
+  - SATPAM 1
+  - SATPAM 3
+  - WAWAN
   textDialogue:
-  - WOI UDAH TELAT! LU GABOLEH MASUK
-  - LAH PAK, INI HARI PERTAMAKU SEKOLAH
-  - UDAH TELAT, PERATURANNYA YA GA BOLEH MASUK
-  - UDAH BALIK SANA!
-  - GAMAU TAU POKOKNYA AKU HARUS MASUK!
+  - EITSSS, MAU KEMANA? KAMU TELAT DAN GABOLEH MASUK!
+  - CHILL PAK, INI KAN HARI PERTAMAKU SEKOLAH, JADI AKU HARUS MASUK SEKOLAH PAK,
+    HEHE
+  - TAPI ATURAN SEKOLAH HARUS DIIKUTI OLEH SEMUA SISWA. APAKAH KAMU BISA LEBIH SOPAN
+    DALAM BERBICARA?
+  - HOAMM, YAELAH PAK, AKU TADI UDAH DI DEPAN SEKOLAH, CUMA LAGI ASIK MAKAN GORENGANNYA
+    PAK EDO AJA
+  - YA TETEP AJA ITUNGANNYA KAMU TELAT
+  - BENAR! SELAGI TELAT YA TELAT, APAPUN ALASANNYA TETEP AJA TELAT DAN GA BOLEH MASUK!
+  - LAH KOCAK, TAPI AKU UDAH DATENG DARI PAGI JAM 6 PAK!
+  - LALU KENAPA KAMU GA MASUK SEKOLAH TADI SEBELUM JAM 7?
+  - UDAH PULANG SANA! KAMU TETEP GABOLEH MASUK!
+  - GAMAU TAU, POKOKNYA AKU HARUS MASUK!
   character:
-  - {fileID: 21300000, guid: c96257f6bcd6eb84fb74546b656c20ff, type: 3}
-  - {fileID: 21300000, guid: 2ec1c1499f38aea4387a65bba58c8478, type: 3}
-  - {fileID: 21300000, guid: c96257f6bcd6eb84fb74546b656c20ff, type: 3}
-  - {fileID: 21300000, guid: c96257f6bcd6eb84fb74546b656c20ff, type: 3}
-  - {fileID: 21300000, guid: 2ec1c1499f38aea4387a65bba58c8478, type: 3}
+  - {fileID: 21300000, guid: cad16cf7da936df4189046b884556abf, type: 3}
+  - {fileID: 21300000, guid: 47a8f472e89785b4ebf31aaef329221a, type: 3}
+  - {fileID: 21300000, guid: 24c0f7bcec6c4cf4d9c2af957cb91b71, type: 3}
+  - {fileID: 21300000, guid: 47a8f472e89785b4ebf31aaef329221a, type: 3}
+  - {fileID: 21300000, guid: cad16cf7da936df4189046b884556abf, type: 3}
+  - {fileID: 21300000, guid: 24c0f7bcec6c4cf4d9c2af957cb91b71, type: 3}
+  - {fileID: 21300000, guid: 1834abbcc7bd60e4796faba496373004, type: 3}
+  - {fileID: 21300000, guid: cad16cf7da936df4189046b884556abf, type: 3}
+  - {fileID: 21300000, guid: 22dbd55bc80b3d249a5d4423dc1c02b9, type: 3}
+  - {fileID: 21300000, guid: d3194ace718e59d4d8e09404ab625277, type: 3}
   cameraPosition:
+  - {x: -29.385, y: 1.35, z: -35.65}
+  - {x: -29.51, y: 1.33, z: -34.281}
+  - {x: -29.385, y: 1.35, z: -35.65}
+  - {x: -29.51, y: 1.33, z: -34.281}
+  - {x: -33.314, y: 1.35, z: -34.11}
   - {x: -29.385, y: 1.35, z: -35.65}
   - {x: -29.51, y: 1.33, z: -34.281}
   - {x: -29.385, y: 1.35, z: -35.65}
@@ -51,6 +74,11 @@ MonoBehaviour:
   - {x: 0, y: -0.19936793, z: 0, w: 0.9799247}
   - {x: 0, y: 0.97992474, z: 0, w: -0.19936791}
   - {x: 0, y: -0.19936793, z: 0, w: 0.9799247}
+  - {x: 0, y: 0.97992474, z: 0, w: -0.19936791}
+  - {x: 0, y: 0.4539905, z: 0, w: 0.8910065}
+  - {x: 0, y: 0.1993679, z: 0, w: -0.97992474}
+  - {x: 0, y: 0.97992474, z: 0, w: -0.19936791}
+  - {x: 0, y: 0.1993679, z: 0, w: -0.97992474}
   - {x: 0, y: 0.4539905, z: 0, w: 0.8910065}
   - {x: 0, y: 0.97992474, z: 0, w: -0.19936791}
-  dialogueType: 0000000001000000000000000000000001000000
+  dialogueType: 00000000010000000000000001000000000000000000000001000000000000000000000001000000
