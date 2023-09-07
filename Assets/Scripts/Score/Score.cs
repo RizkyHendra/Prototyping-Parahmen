@@ -23,17 +23,17 @@ public class Score : MonoBehaviour
     {
         if(scoreValue >= 1)
         {
-            score.text = scoreValue + "X" + " " + comboText1;
+            score.text = scoreValue + "X" + "\n" + comboText1;
             score.color = Color.white;
         }
          if (scoreValue >= 5)
         {
-            score.text = scoreValue + "X" + " " + comboText5;
+            score.text = scoreValue + "X" + "\n" + comboText5;
             score.color = Color.yellow;
         }
          if(scoreValue >= 10)
         {
-            score.text = scoreValue + "X" + " " + comboText10;
+            score.text = scoreValue + "X" + "\n" + comboText10;
             score.color = Color.red;
         }
 

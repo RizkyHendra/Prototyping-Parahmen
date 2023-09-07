@@ -22,7 +22,7 @@ public class EnemyDetection : MonoBehaviour
         movementInput = GetComponentInParent<MovementInput>();
         currentEnemyIndex = 0;
 
-        newCurrentTarget = enemyManager.allEnemies[0].enemyScript;
+        //newCurrentTarget = enemyManager.allEnemies[0].enemyScript;
 
         for (int i = 0; i < enemyManager.allEnemies.Length; i++)
         {
