@@ -371,6 +371,7 @@ public class CombatScript : MonoBehaviour
             return;
         tacticalMode.ModifyATB(25);
         OnHit.Invoke(lockedTarget);
+        Score.scoreValue += 1;
 
         //Polish
         punchParticle.PlayParticleAtPosition(punchPosition.position);
