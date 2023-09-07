@@ -215,4 +215,8 @@ public class SpawnerStartScene : MonoBehaviour
         volume.GetComponent<Volume>().profile.TryGet<DepthOfField>(out dof);
         dof.active = false;
     }
+    public void quit()
+    {
+        Application.Quit();
+    }
 }
