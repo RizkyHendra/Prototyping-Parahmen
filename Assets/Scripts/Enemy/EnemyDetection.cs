@@ -10,6 +10,7 @@ public class EnemyDetection : MonoBehaviour
 
     [SerializeField] Vector3 inputDirection;
     [SerializeField] private EnemyScript currentTarget;
+    public EnemyScript newCurrentTarget;
 
     [SerializeField] private GameObject enemyTargetMarker;
     public int currentEnemyIndex;
@@ -20,6 +21,8 @@ public class EnemyDetection : MonoBehaviour
     {
         movementInput = GetComponentInParent<MovementInput>();
         currentEnemyIndex = 0;
+
+        newCurrentTarget = enemyManager.allEnemies[0].enemyScript;
 
         for (int i = 0; i < enemyManager.allEnemies.Length; i++)
         {
@@ -56,27 +59,37 @@ public class EnemyDetection : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            int originalIndex = currentEnemyIndex;
-            do
-            {
-                currentEnemyIndex = (currentEnemyIndex + 1) % enemyManager.allEnemies.Length;
-                if (currentEnemyIndex == originalIndex)
-                {
-                    break;
-                }
-            } while (!enemyManager.allEnemies[currentEnemyIndex].enemyAvailability);
+            Target();
+        }
 
-            currentTarget = enemyManager.allEnemies[currentEnemyIndex].enemyScript;
+        if (!enemyManager.allEnemies[currentEnemyIndex].enemyAvailability)
+        {
+            Target();
         }
 
         SetMarketTarget();
     }
 
+    private void Target()
+    {
+        int originalIndex = currentEnemyIndex;
+        do
+        {
+            currentEnemyIndex = (currentEnemyIndex + 1) % enemyManager.allEnemies.Length;
+            if (currentEnemyIndex == originalIndex)
+            {
+                break;
+            }
+        } while (!enemyManager.allEnemies[currentEnemyIndex].enemyAvailability);
+
+        newCurrentTarget = enemyManager.allEnemies[currentEnemyIndex].enemyScript;
+    }
+
     private void SetMarketTarget()
     {
-        if (CurrentTarget() != null)
+        if (newCurrentTarget != null)
         {
-            enemyTargetMarker.transform.position = new Vector3(CurrentTarget().transform.position.x, CurrentTarget().transform.position.y + 2, CurrentTarget().transform.position.z);
+            enemyTargetMarker.transform.position = new Vector3(newCurrentTarget.transform.position.x, newCurrentTarget.transform.position.y + 2, newCurrentTarget.transform.position.z);
             enemyTargetMarker.SetActive(true);
         }
         else
