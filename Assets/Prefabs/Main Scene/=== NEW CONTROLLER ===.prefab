@@ -2909,19 +2909,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -56.87403
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3649998
+      value: 1.44
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -57.70195
+      value: -59.88
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.25018784
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2929,7 +2929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0.96819735
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2971,11 +2971,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questIconImg: {fileID: 0}
+  questIcon: {fileID: 0}
   target: {fileID: 0}
   meter: {fileID: 0}
   indicatorGround: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
   player: {fileID: 4372583015261157825}
+  indicatorImage:
+  - {fileID: 808640379, guid: 4119d1f561ef5c04fb22d26ee78d3b1c, type: 3}
+  - {fileID: -1355728111, guid: 4119d1f561ef5c04fb22d26ee78d3b1c, type: 3}
 --- !u!114 &135842237062864936
 MonoBehaviour:
   m_ObjectHideFlags: 0
