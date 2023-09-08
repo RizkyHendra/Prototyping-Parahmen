@@ -21161,6 +21161,7 @@ GameObject:
   - component: {fileID: 2837036791738645852}
   - component: {fileID: 2837036791738645843}
   - component: {fileID: 2837036791738645842}
+  - component: {fileID: 5584457141984479490}
   - component: {fileID: 2837036791738645841}
   m_Layer: 10
   m_Name: Enemy 1
@@ -21225,6 +21226,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.59, z: 0}
+--- !u!114 &5584457141984479490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2837036791738645840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32997211f453f09468f68e643fde4325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  YPosition: 0.06
 --- !u!114 &2837036791738645841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22024,6 +22038,7 @@ GameObject:
   - component: {fileID: 1547067198647804812}
   - component: {fileID: 7444426941782481264}
   - component: {fileID: 3075664578410131897}
+  - component: {fileID: 3278046786641225747}
   - component: {fileID: 7845882857645467990}
   m_Layer: 10
   m_Name: Enemy 1 (1)
@@ -22088,6 +22103,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.59, z: 0}
+--- !u!114 &3278046786641225747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4381748898437798133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32997211f453f09468f68e643fde4325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  YPosition: 0.06
 --- !u!114 &7845882857645467990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22674,6 +22702,7 @@ GameObject:
   - component: {fileID: 4802050982134620706}
   - component: {fileID: 4802050982134620705}
   - component: {fileID: 4802050982134620704}
+  - component: {fileID: 3793819855231415638}
   - component: {fileID: 4802050982134620707}
   m_Layer: 10
   m_Name: Enemy 2
@@ -22738,6 +22767,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.59, z: 0}
+--- !u!114 &3793819855231415638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4802050982134620733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32997211f453f09468f68e643fde4325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  YPosition: 0.06
 --- !u!114 &4802050982134620707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39260,6 +39302,7 @@ GameObject:
   - component: {fileID: 4802050983005331683}
   - component: {fileID: 4802050983005331686}
   - component: {fileID: 4802050983005331681}
+  - component: {fileID: 9113113483997980282}
   - component: {fileID: 4802050983005331680}
   m_Layer: 10
   m_Name: Enemy 3
@@ -39324,6 +39367,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.59, z: 0}
+--- !u!114 &9113113483997980282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4802050983005331682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32997211f453f09468f68e643fde4325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  YPosition: 0.06
 --- !u!114 &4802050983005331680
 MonoBehaviour:
   m_ObjectHideFlags: 0

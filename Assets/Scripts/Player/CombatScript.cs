@@ -31,6 +31,7 @@ public class CombatScript : MonoBehaviour
     public Slider healthBar;
     public Image healthImageBar;
     public GameObject LosePanel;
+    public Animator HitByEnemy;
 
     [Header("Rage Bar")]
     public float staminaRage;
@@ -382,6 +383,7 @@ public class CombatScript : MonoBehaviour
         tacticalMode.ModifyATB(25);
         OnHit.Invoke(lockedTarget);
         Score.scoreValue += 1;
+        Score.animCombo.Play("ComboAnim", 0, 0);
 
         //Polish
         punchParticle.PlayParticleAtPosition(punchPosition.position);

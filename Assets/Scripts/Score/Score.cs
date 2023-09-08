@@ -12,9 +12,11 @@ public class Score : MonoBehaviour
     public string comboText1;
     public string comboText5;
     public string comboText10;
+    public static Animator animCombo;
     void Start()
     {
         score = GetComponent<TMP_Text>();
+        animCombo = GetComponent<Animator>();
         scoreValue = 0;
     }
     

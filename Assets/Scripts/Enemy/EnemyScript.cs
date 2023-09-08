@@ -84,7 +84,7 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         //Constantly look at player
-        transform.LookAt(new Vector3(playerCombat.transform.position.x, transform.position.y, playerCombat.transform.position.z));
+        transform.LookAt(new Vector3(playerCombat.transform.position.x, 0.06f, playerCombat.transform.position.z));
 
         MoveEnemy(moveDirection);
     }
@@ -291,9 +291,18 @@ public class EnemyScript : MonoBehaviour
     public void HitEvent()
     {
         if(!playerCombat.isCountering && !playerCombat.isAttackingEnemy)
+        {
             playerCombat.DamageEvent();
+            playerCombat.HitByEnemy.Play("HitHPBarAnim", 0, 0);
+        }
+            
         if (playerCombat.isCountering && playerCombat.isAttackingEnemy)
+        {
             playerCombat.DamageEvent();
+            playerCombat.HitByEnemy.Play("HitHPBarAnim", 0, 0);
+        }
+            
+
 
         PrepareAttack(false);
     }
