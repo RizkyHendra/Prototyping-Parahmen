@@ -63,6 +63,7 @@ public class SpawnerStartScene : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.Instance.PlayBGM("BGM2");
         fadeScreen.SetActive(false);
 
         canSpawnNextBridge = true;

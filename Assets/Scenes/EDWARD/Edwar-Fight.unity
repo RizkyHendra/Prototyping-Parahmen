@@ -25195,7 +25195,11 @@ Animator:
   m_GameObject: {fileID: 1061809779302934090}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: eb4497ff564c7d94caad9afacce5f45c, type: 3}
+<<<<<<< Updated upstream
   m_Controller: {fileID: 9100000, guid: b25c2541ca39a994cb62695ba848e1e4, type: 2}
+=======
+  m_Controller: {fileID: 9100000, guid: 2d5eaae05fcc9c047869d115713ab85b, type: 2}
+>>>>>>> Stashed changes
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -26238,8 +26242,13 @@ MonoBehaviour:
     m_Bits: 1024
   inputDirection: {x: 0, y: 0, z: 0}
   currentTarget: {fileID: 0}
+<<<<<<< Updated upstream
   newCurrentTarget: {fileID: 1098400956}
   enemyTargetMarker: {fileID: 1270415487}
+=======
+  newCurrentTarget: {fileID: 0}
+  enemyTargetMarker: {fileID: 0}
+>>>>>>> Stashed changes
   currentEnemyIndex: 0
   cam: {fileID: 1086350615}
 --- !u!135 &3572760217550361351
@@ -26320,7 +26329,11 @@ MonoBehaviour:
   healthBar: {fileID: 2000213452}
   healthImageBar: {fileID: 79988564}
   LosePanel: {fileID: 1048842664}
+<<<<<<< Updated upstream
   HitByEnemy: {fileID: 2000213453}
+=======
+  HitByEnemy: {fileID: 0}
+>>>>>>> Stashed changes
   staminaRage: 0
   barImageFill: {fileID: 1446314794}
   staminaBarRage: {fileID: 1104557917}
