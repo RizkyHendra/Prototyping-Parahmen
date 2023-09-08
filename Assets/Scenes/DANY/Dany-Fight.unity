@@ -27496,7 +27496,7 @@ MonoBehaviour:
     m_ImpulseType: 3
     m_DissipationRate: 0
     m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-    m_AmplitudeGain: 4.001994
+    m_AmplitudeGain: 3
     m_FrequencyGain: 0.5
     m_RepeatMode: 0
     m_Randomize: 1
@@ -45199,7 +45199,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7348574983845289212}
-  m_LocalRotation: {x: 0.11136739, y: -0.9446906, z: 0.29866314, w: -0.07718475}
+  m_LocalRotation: {x: 0.11136739, y: -0.9446906, z: 0.29866314, w: -0.07718477}
   m_LocalPosition: {x: -0.000015077019, y: -0.0000026025841, z: 0.0000056109275}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
