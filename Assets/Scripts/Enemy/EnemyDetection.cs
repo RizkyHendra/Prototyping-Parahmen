@@ -68,6 +68,29 @@ public class EnemyDetection : MonoBehaviour
         }
 
         SetMarketTarget();
+
+        bool isAllEnemiesUnavailable = CheckIfAllEnemiesUnavailable(enemyManager.allEnemies);
+
+        if (isAllEnemiesUnavailable)
+        {
+            enemyTargetMarker.SetActive(false);
+        }
+        else
+        {
+            enemyTargetMarker.SetActive(true);
+        }
+    }
+
+    private bool CheckIfAllEnemiesUnavailable(EnemyStruct[] enemies)
+    {
+        foreach (EnemyStruct enemy in enemies)
+        {
+            if (enemy.enemyAvailability)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     private void Target()
