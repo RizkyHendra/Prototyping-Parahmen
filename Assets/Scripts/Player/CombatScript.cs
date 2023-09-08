@@ -31,6 +31,7 @@ public class CombatScript : MonoBehaviour
     public Slider healthBar;
     public Image healthImageBar;
     public GameObject LosePanel;
+    public Animator HitByEnemy;
 
     [Header("Rage Bar")]
     public float staminaRage;
@@ -40,7 +41,7 @@ public class CombatScript : MonoBehaviour
     public GameObject particelEffect1;
 
     [Header("Target")]
-    private EnemyScript lockedTarget;
+    public EnemyScript lockedTarget;
 
     [Header("Combat Settings")]
     [SerializeField] private float attackCooldown;
@@ -89,6 +90,8 @@ public class CombatScript : MonoBehaviour
         enemyDetection = GetComponentInChildren<EnemyDetection>();
         movementInput = GetComponent<MovementInput>();
         impulseSource = GetComponentInChildren<CinemachineImpulseSource>();
+
+        //lockedTarget = enemyDetection.CurrentTarget();
     }
 
     private void Update()
@@ -118,7 +121,9 @@ public class CombatScript : MonoBehaviour
         {
             staminaRage = 0;
         }
-      
+
+        lockedTarget = enemyDetection.newCurrentTarget;
+
     }
 
     private void DecreaseEnergyStamina()
@@ -192,17 +197,23 @@ public class CombatScript : MonoBehaviour
             }
             else
             {
-                lockedTarget = enemyManager.RandomEnemy();
+                //lockedTarget = enemyManager.RandomEnemy();
+                //lockedTarget = enemyDetection.CurrentTarget();
             }
         }
 
         //If the player is moving the movement input, use the "directional" detection to determine the enemy
         if (enemyDetection.InputMagnitude() > .2f)
-            lockedTarget = enemyDetection.CurrentTarget();
+            //lockedTarget = enemyDetection.CurrentTarget();
 
         //Extra check to see if the locked target was set
         if(lockedTarget == null)
-            lockedTarget = enemyManager.RandomEnemy();
+        {
+            //lockedTarget = enemyManager.RandomEnemy();
+            //lockedTarget = enemyDetection.CurrentTarget();
+        }
+            
+
 
         //AttackTarget
         if(stamina > dValue)
@@ -371,6 +382,8 @@ public class CombatScript : MonoBehaviour
             return;
         tacticalMode.ModifyATB(25);
         OnHit.Invoke(lockedTarget);
+        Score.scoreValue += 1;
+        Score.animCombo.Play("ComboAnim", 0, 0);
 
         //Polish
         punchParticle.PlayParticleAtPosition(punchPosition.position);

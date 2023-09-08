@@ -6,11 +6,12 @@ using TMPro;
 
 public class WaypointQuestIndicator : MonoBehaviour
 {
-    public Image questIconImg;
+    public Image questIconImg, questIcon;
     public Transform target;
     public TextMeshProUGUI meter, indicatorGround;
     public Vector3 offset;
     public GameObject player;
+    public Sprite[] indicatorImage;
 
     private bool isLimitation;
     private bool isPlayerGround, isTargetGround;
@@ -20,6 +21,7 @@ public class WaypointQuestIndicator : MonoBehaviour
         questIconImg = GameObject.FindGameObjectWithTag("QuestIndicator").GetComponent<Image>();
         meter = questIconImg.gameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         indicatorGround = questIconImg.gameObject.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        questIcon = questIconImg.gameObject.transform.GetChild(2).GetComponent<Image>();
 
         target = GameObject.FindGameObjectWithTag("QuestTrigger").GetComponent<Transform>();
     }
@@ -70,11 +72,13 @@ public class WaypointQuestIndicator : MonoBehaviour
         if (isLimitation)
         {
             meter.gameObject.SetActive(false);
+            questIcon.sprite = indicatorImage[1];
             indicatorGround.gameObject.SetActive(false);
         }
         else
         {
             meter.gameObject.SetActive(true);
+            questIcon.sprite = indicatorImage[0];
             indicatorGround.gameObject.SetActive(true);
 
             if (isPlayerGround && isTargetGround || !isPlayerGround && !isTargetGround)
