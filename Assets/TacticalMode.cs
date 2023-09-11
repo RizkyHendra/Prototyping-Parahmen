@@ -81,18 +81,12 @@ public class TacticalMode : MonoBehaviour
     public bool seblakCyborgOn = false;
     private void Start()
     {
-        
-   
         anim = GetComponent<Animator>();
         camImpulseSource = Camera.main.GetComponent<CinemachineImpulseSource>();
     }
 
     void Update()
     {
-
-
-
-
         barBoostValue.fillAmount = atbSlider / 100;
         if (Input.GetMouseButtonDown(1) && !usingAbility)
         {
@@ -126,8 +120,9 @@ public class TacticalMode : MonoBehaviour
             //Polish
 
             LightColor(groundLight, healColor, .5f);
+
+            CursorManager.Instance.DisableCursorMouse();
         }
-        
     }
 
     public void NasiGorengPrototype()
@@ -144,6 +139,8 @@ public class TacticalMode : MonoBehaviour
         //Polish
      
         LightColor(groundLight, healColor, .5f);
+
+        CursorManager.Instance.DisableCursorMouse();
     }
 
     public void MieAyamNeon()
@@ -160,8 +157,9 @@ public class TacticalMode : MonoBehaviour
         //Polish
       
         LightColor(groundLight, healColor, .5f);
-    }
 
+        CursorManager.Instance.DisableCursorMouse();
+    }
 
     IEnumerator AbilityCooldown()
     {
@@ -169,12 +167,6 @@ public class TacticalMode : MonoBehaviour
         yield return new WaitForSeconds(1f);
         usingAbility = false;
     }
-
- 
-
-  
-
-  
 
     public void ModifyATB(float amount)
     {
@@ -234,6 +226,8 @@ public class TacticalMode : MonoBehaviour
         DOVirtual.Float(on ? 0 : 1, on ? 1 : 0, .3f, SlowmotionPostProcessing).SetUpdate(true);
 
         OnTacticalTrigger.Invoke(on);
+
+        CursorManager.Instance.EnableCursorMouse();
     }
 
     public void SelectTarget(int index)
