@@ -102,6 +102,9 @@ public class DialogueSystem : MonoBehaviour
     {
         StartCoroutine(PlayerProgression.Instance.FadeAnim("fade out"));
 
+        SoundManager.Instance.StopBGM("BGM - Exploration");
+        SoundManager.Instance.PlayBGM("BGM - Dialogue");
+
         dialogueBorderObj.SetActive(true);
         dialogueCamera.SetActive(true);
         GUIObj.SetActive(false);
@@ -179,6 +182,7 @@ public class DialogueSystem : MonoBehaviour
         animFade.Play("fade");
         yield return new WaitForSecondsRealtime(time);
         SceneManager.LoadScene(sceneIndex);
+        SoundManager.Instance.StopBGM("BGM - Dialogue");
     }
 
     private IEnumerator delayActiveDialogueLeft(float time)

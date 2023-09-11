@@ -48,7 +48,8 @@ public class PlayerProgression : MonoBehaviour
     {
         StartCoroutine(FadeAnim("fade out"));
         StartCoroutine(PopUpQuest());
-        
+
+        SoundManager.Instance.PlayBGM("BGM - Exploration");
     }
 
     public IEnumerator FadeAnim(string name)

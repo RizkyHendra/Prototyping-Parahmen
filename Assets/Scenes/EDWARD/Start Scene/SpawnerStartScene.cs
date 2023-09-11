@@ -189,6 +189,7 @@ public class SpawnerStartScene : MonoBehaviour
         fadeScreen.GetComponent<Animator>().Play("fade in");
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(1);
+        SoundManager.Instance.StopBGM("BGM2");
     }
 
 
