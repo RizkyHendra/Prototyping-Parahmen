@@ -54,10 +54,7 @@ public class TacticalMode : MonoBehaviour
 
     [Space]
     [Header("VFX")]
-    public VisualEffect sparkVFX;
-    public VisualEffect abilityVFX;
-    public VisualEffect abilityHitVFX;
-    public VisualEffect healVFX;
+   
     [Space]
     [Header("Ligts")]
     public Light swordLight;
@@ -80,6 +77,8 @@ public class TacticalMode : MonoBehaviour
 
     private CinemachineImpulseSource camImpulseSource;
     public CombatScript stamina;
+    public RageEffect rageEffect;
+    public bool seblakCyborgOn = false;
     private void Start()
     {
         
@@ -111,19 +110,24 @@ public class TacticalMode : MonoBehaviour
 
     public void SeblakCyborg()
     {
-        ModifyATB(-100);
+        seblakCyborgOn = true;
+        if (seblakCyborgOn)
+        {
+            ModifyATB(-100);
 
-        StartCoroutine(AbilityCooldown());
-      
-        SetTacticalMode(false);
-        stamina.RageStamina(100);
+            StartCoroutine(AbilityCooldown());
+            lastHitCamera.SetActive(true);
+            SetTacticalMode(false);
+            stamina.RageStamina(100);
+
+            //Animation
+            anim.SetTrigger("Skill1");
+            rageEffect.RageEffectt();
+            //Polish
+
+            LightColor(groundLight, healColor, .5f);
+        }
         
-        //Animation
-        anim.SetTrigger("Skill1");
-
-        //Polish
-        PlayVFX(healVFX, false);
-        LightColor(groundLight, healColor, .5f);
     }
 
     public void NasiGorengPrototype()
@@ -138,7 +142,7 @@ public class TacticalMode : MonoBehaviour
         anim.SetTrigger("Skill1");
 
         //Polish
-        PlayVFX(healVFX, false);
+     
         LightColor(groundLight, healColor, .5f);
     }
 
@@ -154,7 +158,7 @@ public class TacticalMode : MonoBehaviour
         anim.SetTrigger("Skill1");
 
         //Polish
-        PlayVFX(healVFX, false);
+      
         LightColor(groundLight, healColor, .5f);
     }
 
@@ -255,11 +259,11 @@ public class TacticalMode : MonoBehaviour
 
     public void PlayVFX(VisualEffect visualEffect, bool shakeCamera, float shakeAmplitude = 2, float shakeFrequency = 2, float shakeSustain = .2f)
     {
-        if (visualEffect == abilityHitVFX)
-            LightColor(groundLight, abilityColot, .2f);
+        //if (visualEffect == abilityHitVFX)
+        //    LightColor(groundLight, abilityColot, .2f);
 
-        if (visualEffect == sparkVFX)
-            visualEffect.SetFloat("PosX", VFXDir);
+        //if (visualEffect == sparkVFX)
+        //    visualEffect.SetFloat("PosX", VFXDir);
         visualEffect.SendEvent("OnPlay");
 
         camImpulseSource.m_ImpulseDefinition.m_AmplitudeGain = shakeAmplitude;

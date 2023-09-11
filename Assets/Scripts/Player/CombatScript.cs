@@ -6,6 +6,7 @@ using Cinemachine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class CombatScript : MonoBehaviour
 {
     
@@ -39,6 +40,7 @@ public class CombatScript : MonoBehaviour
     public Slider staminaBarRage;
     public float dValueRage;
     public GameObject particelEffect1;
+    
 
     [Header("Target")]
     public EnemyScript lockedTarget;
@@ -53,6 +55,7 @@ public class CombatScript : MonoBehaviour
     [SerializeField] private Transform punchPosition;
     [SerializeField] private ParticleSystemScript punchParticle;
     [SerializeField] private GameObject lastHitCamera;
+    [SerializeField] private GameObject RageMode;
     [SerializeField] private GameObject CounterCamera;
     [SerializeField] private Transform lastHitFocusObject;
     [SerializeField] private GameObject WinPanel;
@@ -162,11 +165,17 @@ public class CombatScript : MonoBehaviour
         }
         else
         {
-            particelEffect1.SetActive(true);
+            StartCoroutine(cooldown());
         }
 
-
-
+    }
+    IEnumerator cooldown()
+    {
+        
+        yield return new WaitForSeconds(3f);
+        particelEffect1.SetActive(true);
+        tacticalMode.seblakCyborgOn = false;
+        
     }
     public void RageStamina(float rageUp)
     {
@@ -391,7 +400,12 @@ public class CombatScript : MonoBehaviour
 
     public void DamageEvent()
     {
-        animator.SetTrigger("Hit");
+        if(tacticalMode.seblakCyborgOn == false)
+        {
+            animator.SetTrigger("Hit");
+        }
+       
+       
         health -= 10;
         if (damageCoroutine != null)
             StopCoroutine(damageCoroutine);
