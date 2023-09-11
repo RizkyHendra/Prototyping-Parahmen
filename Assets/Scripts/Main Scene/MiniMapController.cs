@@ -10,10 +10,7 @@ public class MiniMapController : MonoBehaviour
     public GameObject GUI, mainMap;
     private bool isOpen;
 
-    public float minX = -5.0f;
-    public float maxX = 5.0f;
-    public float minY = -5.0f;
-    public float maxY = 5.0f;
+    public float radiusCamera;
     public GameObject questMarker;
     private Vector3 originalPosition;
 
@@ -58,6 +55,23 @@ public class MiniMapController : MonoBehaviour
 
     private void SetQuestMiniMap()
     {
-        questMarker.transform.position = new Vector3(originalPosition.x, questMarker.transform.position.y, originalPosition.z);
+        if(!isOpen)
+        {
+            Vector3 playerPosition = player.transform.position;
+            Vector3 questMarkerOffset = originalPosition - playerPosition;
+
+            float radius = radiusCamera;
+            if (questMarkerOffset.magnitude > radius)
+            {
+                questMarkerOffset = questMarkerOffset.normalized * radius;
+            }
+
+            Vector3 finalPosition = playerPosition + questMarkerOffset;
+            questMarker.transform.position = new Vector3(finalPosition.x, questMarker.transform.position.y, finalPosition.z);
+        }
+        else
+        {
+            questMarker.transform.position = new Vector3(originalPosition.x, questMarker.transform.position.y, originalPosition.z);
+        }
     }
 }
