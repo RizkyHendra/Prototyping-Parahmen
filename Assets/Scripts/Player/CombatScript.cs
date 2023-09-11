@@ -118,6 +118,7 @@ public class CombatScript : MonoBehaviour
         if(health == 0)
         {
             LosePanel.SetActive(true);
+            CursorManager.Instance.EnableCursorMouse();
 
         }
         if(staminaRage <= 0)
@@ -307,7 +308,8 @@ public class CombatScript : MonoBehaviour
             
             yield return new WaitForSecondsRealtime(5);
             WinPanel.SetActive(true);
-            
+            CursorManager.Instance.EnableCursorMouse();
+
         }
     }
 
