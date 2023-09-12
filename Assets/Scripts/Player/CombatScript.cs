@@ -39,7 +39,7 @@ public class CombatScript : MonoBehaviour
     public Image barImageFill;
     public Slider staminaBarRage;
     public float dValueRage;
-    public GameObject particelEffect1;
+    public RageTrail rageTrail;
     
 
     [Header("Target")]
@@ -161,7 +161,7 @@ public class CombatScript : MonoBehaviour
         staminaRage -= dValueRage * Time.deltaTime / .70f;
         if (staminaRage <= 0)
         {
-            particelEffect1.SetActive(false);
+            rageTrail.trarilActif = false;
             staminaRage = 0;
         }
         else
@@ -172,10 +172,12 @@ public class CombatScript : MonoBehaviour
     }
     IEnumerator cooldown()
     {
-        
-        yield return new WaitForSeconds(3f);
-        particelEffect1.SetActive(true);
+        lockedTarget = null;
+        yield return new WaitForSeconds(4.5f);
+
+        rageTrail.trarilActif = true;
         tacticalMode.seblakCyborgOn = false;
+       
         
     }
     public void RageStamina(float rageUp)
@@ -202,7 +204,7 @@ public class CombatScript : MonoBehaviour
         {
             if (enemyManager.AliveEnemyCount() == 0)
             {
-                Attack(null, 0);
+                //Attack(null, 0);
                 return;
             }
             else
@@ -246,7 +248,7 @@ public class CombatScript : MonoBehaviour
         //Attack nothing in case target is null
         if (target == null)
         {
-            AttackType("GroundPunch", .2f, null, 0);
+            //AttackType("GroundPunch", .2f, null, 0);
             return;
         }
 
@@ -261,7 +263,7 @@ public class CombatScript : MonoBehaviour
         {
             
             lockedTarget = null;
-            AttackType("GroundPunch", .2f, null, 0);
+            
         }
         //Change impulse
         impulseSource.m_ImpulseDefinition.m_AmplitudeGain = Mathf.Max(3, 1 * distance);

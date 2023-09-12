@@ -79,6 +79,8 @@ public class TacticalMode : MonoBehaviour
     public CombatScript stamina;
     public RageEffect rageEffect;
     public bool seblakCyborgOn = false;
+    public RageTrail rageTraril;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -104,10 +106,12 @@ public class TacticalMode : MonoBehaviour
 
     public void SeblakCyborg()
     {
+      
+
         seblakCyborgOn = true;
         if (seblakCyborgOn)
         {
-            ModifyATB(-100);
+              ModifyATB(-100);
 
             StartCoroutine(AbilityCooldown());
             lastHitCamera.SetActive(true);
