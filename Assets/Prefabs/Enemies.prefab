@@ -21252,7 +21252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eyesRenderer: {fileID: 0}
-  health: 4
+  health: 10
   isPreparingAttack: 0
   isMoving: 0
   isRetreating: 0
@@ -22129,7 +22129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eyesRenderer: {fileID: 0}
-  health: 4
+  health: 10
   isPreparingAttack: 0
   isMoving: 0
   isRetreating: 0
@@ -22793,7 +22793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eyesRenderer: {fileID: 0}
-  health: 4
+  health: 10
   isPreparingAttack: 0
   isMoving: 0
   isRetreating: 0
@@ -39393,7 +39393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eyesRenderer: {fileID: 0}
-  health: 4
+  health: 10
   isPreparingAttack: 0
   isMoving: 0
   isRetreating: 0

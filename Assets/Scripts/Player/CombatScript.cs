@@ -65,6 +65,8 @@ public class CombatScript : MonoBehaviour
     private Coroutine attackCoroutine;
     private Coroutine damageCoroutine;
 
+    private int randomNumber;
+
     [Space]
 
     //Events
@@ -94,12 +96,16 @@ public class CombatScript : MonoBehaviour
         movementInput = GetComponent<MovementInput>();
         impulseSource = GetComponentInChildren<CinemachineImpulseSource>();
 
+        SoundManager.Instance.PlayBGM("BGM - Fight");
+
         //lockedTarget = enemyDetection.CurrentTarget();
     }
 
     private void Update()
     {
-        if(isAttackingEnemy == false)
+        randomNumber = Random.Range(0, 2);
+
+        if (isAttackingEnemy == false)
         {
             if (stamina != maxStamina)
             {
@@ -318,11 +324,13 @@ public class CombatScript : MonoBehaviour
     public void SceneMainMenu()
     {
         SceneManager.LoadScene(MainMenu);
+        SoundManager.Instance.StopBGM("BGM - Fight");
     }
 
     public void SceneRetri()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SoundManager.Instance.StopBGM("BGM - Fight");
     }
 
     void MoveTorwardsTarget(EnemyScript target, float duration)
@@ -397,6 +405,17 @@ public class CombatScript : MonoBehaviour
         OnHit.Invoke(lockedTarget);
         Score.scoreValue += 1;
         Score.animCombo.Play("ComboAnim", 0, 0);
+
+        Debug.Log("nilai"+randomNumber);
+
+        if(randomNumber == 0)
+        {
+            SoundManager.Instance.PlaySFX("SFX - Punch 1");
+        }
+        else if(randomNumber == 1)
+        {
+            SoundManager.Instance.PlaySFX("SFX - Punch 2");
+        }
 
         //Polish
         punchParticle.PlayParticleAtPosition(punchPosition.position);

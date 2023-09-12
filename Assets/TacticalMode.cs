@@ -126,6 +126,8 @@ public class TacticalMode : MonoBehaviour
             LightColor(groundLight, healColor, .5f);
 
             CursorManager.Instance.DisableCursorMouse();
+
+            SoundManager.Instance.PlaySFX("SFX - Rage");
         }
     }
 
@@ -145,6 +147,8 @@ public class TacticalMode : MonoBehaviour
         LightColor(groundLight, healColor, .5f);
 
         CursorManager.Instance.DisableCursorMouse();
+
+        SoundManager.Instance.PlaySFX("SFX - Stamina");
     }
 
     public void MieAyamNeon()
@@ -163,6 +167,8 @@ public class TacticalMode : MonoBehaviour
         LightColor(groundLight, healColor, .5f);
 
         CursorManager.Instance.DisableCursorMouse();
+
+        SoundManager.Instance.PlaySFX("SFX - Heal");
     }
 
     IEnumerator AbilityCooldown()
