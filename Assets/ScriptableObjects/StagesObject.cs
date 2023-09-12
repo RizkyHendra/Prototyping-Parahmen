@@ -26,4 +26,5 @@ public class StagesObject : ScriptableObject
     public Vector3[] cameraPosition;
     public Quaternion[] cameraRotation;
     public int[] dialogueType;
+    public string[] sfxAudioName;
 }

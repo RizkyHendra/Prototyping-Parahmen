@@ -65,6 +65,7 @@ public class PlayerProgression : MonoBehaviour
         popUpQuest.SetActive(false);
         popUpQuestText.text = currentStage.PopUpQuestName;
         yield return new WaitForSeconds(3f);
+        SoundManager.Instance.PlaySFX("SFX - Swoosh");
         Time.timeScale = 0.2f;
         popUpQuest.SetActive(true);
         popUpQuest.GetComponent<Animator>().Play("popupquest");
