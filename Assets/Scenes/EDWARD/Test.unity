@@ -4614,14 +4614,14 @@ MonoBehaviour:
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 2
+    m_Time: 0.5
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
+  m_CustomBlends: {fileID: 11400000, guid: 1e227a7d24e62814f9f0982a29aa54d2, type: 2}
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []

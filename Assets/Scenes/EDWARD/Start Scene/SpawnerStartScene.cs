@@ -262,7 +262,7 @@ public class SpawnerStartScene : MonoBehaviour
 
             float convertedValue = (db - 1) / (maxValue - 1);
 
-            int tes = (int)(convertedValue*10);
+            int tes = (int)(convertedValue*10)+10;
             Debug.Log("int" + tes + "float " + convertedValue*10);
             vignette.color = new Color32(255,255,255,(byte)tes);
         }
