@@ -872,7 +872,7 @@ MonoBehaviour:
   - {fileID: 929262438}
   - {fileID: 1960150536}
   animFade: {fileID: 1643853207}
-  textSpeed: 0.03
+  textSpeed: 0.001
   player: {fileID: 0}
   stuntMan: {fileID: 1599110279}
   onDialogueScene: 0
@@ -27409,8 +27409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8a2199a5e1975498a158e2daa00a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topRight: {fileID: 37615106}
-  bottomLeft: {fileID: 1707729742}
 --- !u!4 &882534649
 Transform:
   m_ObjectHideFlags: 0

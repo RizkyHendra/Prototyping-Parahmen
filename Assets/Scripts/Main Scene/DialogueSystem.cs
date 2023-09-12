@@ -82,6 +82,8 @@ public class DialogueSystem : MonoBehaviour
                     nameDialogue[1].text = currentStage.nameDialogue[index];
                     characterImage[0].sprite = currentStage.character[index];
                     characterImage[1].sprite = currentStage.character[index];
+                    SoundManager.Instance.PlaySFX(currentStage.sfxAudioName[index]);
+                    SoundManager.Instance.PlaySFX("SFX - Typing");
                     dialogueCamera.transform.SetLocalPositionAndRotation(currentStage.cameraPosition[index], currentStage.cameraRotation[index]);
                 }
                 else
@@ -133,6 +135,8 @@ public class DialogueSystem : MonoBehaviour
 
         characterImage[0].sprite = currentStage.character[index];
         characterImage[1].sprite = currentStage.character[index];
+        SoundManager.Instance.PlaySFX(currentStage.sfxAudioName[index]);
+        SoundManager.Instance.PlaySFX("SFX - Typing");
 
         dialogueCamera.transform.SetLocalPositionAndRotation(currentStage.cameraPosition[index], currentStage.cameraRotation[index]);
 

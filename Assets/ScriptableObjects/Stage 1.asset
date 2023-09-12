@@ -82,3 +82,14 @@ MonoBehaviour:
   - {x: 0, y: 0.4539905, z: 0, w: 0.8910065}
   - {x: 0, y: 0.97992474, z: 0, w: -0.19936791}
   dialogueType: 00000000010000000000000001000000000000000000000001000000000000000000000001000000
+  sfxAudioName:
+  - SFX - Dialogue PakEdo 1
+  - SFX - Dialogue Wawan 1
+  - SFX - Dialogue PakEdo 2
+  - SFX - Dialogue Wawan 2
+  - SFX - Dialogue PakEdo 2
+  - SFX - Dialogue PakEdo 1
+  - SFX - Dialogue Wawan 3
+  - SFX - Dialogue PakEdo 2
+  - SFX - Dialogue PakEdo 1
+  - SFX - Dialogue Wawan 3

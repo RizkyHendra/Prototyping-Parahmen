@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.HighDefinition;
 
 public class SpawnerStartScene : MonoBehaviour
 {
+    [Header("Better UI")]
+    public AudioSource audioSource;
+    public float maxValue;
+    public float scaleFactor = 1.0f;
+    public static float[] samples = new float[128];
+    public Image vignette;
+
     [Header("Spawner Setting")]
     [SerializeField] Transform spawner;
     [SerializeField] Vector3 spawnerOffset;
@@ -58,12 +66,14 @@ public class SpawnerStartScene : MonoBehaviour
     //setting
     public GameObject CanvasMenuObj, settingCam, fadeScreen;
 
+    public GameObject settingVirtualCamera, playCamera;
+
     [Header("Volume")]
     [SerializeField] GameObject volume;
 
     private void Start()
     {
-        SoundManager.Instance.PlayBGM("BGM2");
+        SoundManager.Instance.PlayBGM("BGM - MainMenu");
         fadeScreen.SetActive(false);
 
         canSpawnNextBridge = true;
@@ -82,6 +92,8 @@ public class SpawnerStartScene : MonoBehaviour
         SpawnBridge();
         MoveCamera();
         //DeleteBridge(); 
+
+        BetterUIMethod();
     }
 
     private void SpawnBridge()
@@ -184,12 +196,14 @@ public class SpawnerStartScene : MonoBehaviour
 
     private IEnumerator DelayLoadScene()
     {
+        playCamera.SetActive(true);
         yield return new WaitForSeconds(2);
         fadeScreen.SetActive(true);
+        
         fadeScreen.GetComponent<Animator>().Play("fade in");
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(1);
-        SoundManager.Instance.StopBGM("BGM2");
+        SoundManager.Instance.StopBGM("BGM - MainMenu");
     }
 
 
@@ -204,7 +218,8 @@ public class SpawnerStartScene : MonoBehaviour
         //gamePhase = 10;
         //mainCamera.transform.position = Vector3.Lerp(mainCamera.position, finalBridgeCam.transform.position, cameraDecelerationSpeed * Time.deltaTime);
         //mainCamera.transform.rotation = Quaternion.Lerp(mainCamera.rotation, finalBridgeCam.transform.rotation, cameraDecelerationSpeed * Time.deltaTime);
-        settingCam.GetComponent<Camera>().enabled = true;
+        //settingCam.GetComponent<Camera>().enabled = true;
+        settingVirtualCamera.SetActive(true);
 
         DepthOfField dof;
         volume.GetComponent<Volume>().profile.TryGet<DepthOfField>(out dof);
@@ -212,7 +227,8 @@ public class SpawnerStartScene : MonoBehaviour
     }
     public void SettingsOff()
     {
-        settingCam.GetComponent<Camera>().enabled = false;
+        //settingCam.GetComponent<Camera>().enabled = false;
+        settingVirtualCamera.SetActive(false);
         DepthOfField dof;
         volume.GetComponent<Volume>().profile.TryGet<DepthOfField>(out dof);
         dof.active = false;
@@ -221,5 +237,34 @@ public class SpawnerStartScene : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
+    }
+
+    public void _OnClickSFX()
+    {
+        SoundManager.Instance.PlaySFX("SFX - Button");
+    }
+
+    private void BetterUIMethod()
+    {
+        if (audioSource != null)
+        {
+            audioSource.GetOutputData(samples, 0);
+
+            float vals = 0.0f;
+
+            for (int i = 0; i < 128; i++)
+            {
+                vals += Mathf.Abs(samples[i]);
+            }
+            vals /= 128.0f;
+
+            float db = 1.0f + (vals * 10.0f);
+
+            float convertedValue = (db - 1) / (maxValue - 1);
+
+            int tes = (int)(convertedValue*10);
+            Debug.Log("int" + tes + "float " + convertedValue*10);
+            vignette.color = new Color32(255,255,255,(byte)tes);
+        }
     }
 }

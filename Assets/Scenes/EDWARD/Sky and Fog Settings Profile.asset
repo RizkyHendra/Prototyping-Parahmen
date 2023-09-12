@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 0
   quality:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 3
   focusMode:
     m_OverrideState: 1
     m_Value: 2
@@ -27,28 +27,28 @@ MonoBehaviour:
     m_Value: 1
   nearFocusStart:
     m_OverrideState: 1
-    m_Value: 5
+    m_Value: 0
   nearFocusEnd:
     m_OverrideState: 1
-    m_Value: 9.99999
+    m_Value: 0.4
   farFocusStart:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 0.40001002
   farFocusEnd:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 3.23
   m_NearSampleCount:
     m_OverrideState: 1
-    m_Value: 5
+    m_Value: 6
   m_NearMaxBlur:
     m_OverrideState: 1
     m_Value: 4
   m_FarSampleCount:
     m_OverrideState: 1
-    m_Value: 7
+    m_Value: 16
   m_FarMaxBlur:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: 5.07
   m_Resolution:
     m_OverrideState: 1
     m_Value: 2
