@@ -11044,6 +11044,7 @@ GameObject:
   - component: {fileID: 1901851464}
   - component: {fileID: 1901851469}
   - component: {fileID: 1901851470}
+  - component: {fileID: 1901851471}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -11158,6 +11159,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmVolumeSlider: {fileID: 1601804979}
   sfxVolumeSlider: {fileID: 1910644463}
+--- !u!114 &1901851471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901851463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6631fee009df76247a5557a68084a22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1910644461
 GameObject:
   m_ObjectHideFlags: 0

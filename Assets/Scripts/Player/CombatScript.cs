@@ -154,7 +154,7 @@ public class CombatScript : MonoBehaviour
     private void IncreseEnergy()
     {
 
-        stamina += dValue * Time.deltaTime / .70f;
+        stamina += dValue * Time.deltaTime / 1f;
         if(stamina >= maxStamina)
         {
             stamina = maxStamina;
@@ -234,7 +234,7 @@ public class CombatScript : MonoBehaviour
 
 
         //AttackTarget
-        if(stamina > dValue)
+        if(stamina > dValue*2)
         {
             DecreaseEnergyStamina();
             Attack(lockedTarget, TargetDistance(lockedTarget));

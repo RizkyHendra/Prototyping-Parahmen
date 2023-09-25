@@ -5,6 +5,8 @@ using DG.Tweening;
 
 public class EnemyScript : MonoBehaviour
 {
+    [SerializeField] private ParticleSystemScript playerHitParticle;
+
     public Renderer eyesRenderer;
     //Declarations
     private Animator animator;
@@ -294,12 +296,14 @@ public class EnemyScript : MonoBehaviour
         {
             playerCombat.DamageEvent();
             playerCombat.HitByEnemy.Play("HitHPBarAnim", 0, 0);
+            playerHitParticle.PlayParticleAtPosition( new Vector3(playerCombat.gameObject.transform.position.x, playerCombat.gameObject.transform.position.y+1, playerCombat.gameObject.transform.position.z) );
         }
             
         if (playerCombat.isCountering && playerCombat.isAttackingEnemy)
         {
             playerCombat.DamageEvent();
             playerCombat.HitByEnemy.Play("HitHPBarAnim", 0, 0);
+            playerHitParticle.PlayParticleAtPosition(new Vector3(playerCombat.gameObject.transform.position.x, playerCombat.gameObject.transform.position.y + 1, playerCombat.gameObject.transform.position.z));
         }
             
 
