@@ -19,23 +19,23 @@ MonoBehaviour:
   playerDialoguePosition: {x: -30.18863, y: 0.04023743, z: -36.12083}
   playerDialogueRotatation: {x: 0, y: 0, z: 0, w: 1}
   prefabStage: {fileID: 7243188791219169218, guid: 750dd664aca02554cab3f5c1e6256461, type: 3}
-  questName: 'Masuk
+  questName: 'Go To
 
-    Sekolah'
-  PopUpQuestName: MASUK SEKOLAH !
+    School'
+  PopUpQuestName: GO TO SCHOOL!
   nameDialogue:
-  - ' SATPAM 1'
-  - WAWAN
-  - SATPAM 1
-  - WAWAN
-  - SATPAM 1
-  - SATPAM 2
-  - WAWAN
-  - SATPAM 1
-  - SATPAM 3
-  - WAWAN
+  - ' SECURITY 1'
+  - ARNOLD
+  - SECURITY 1
+  - ARNOLD
+  - SECURITY 1
+  - SECURITY 2
+  - ARNOLD
+  - SECURITY 1
+  - SECURITY 3
+  - ARNOLD
   textDialogue:
-  - Eitsss, mau kemana? Kamu telat dan gaboleh masuk!
+  - Eitsss, where are you going? You're late and you can't go to class!
   - Chill pak, ini kan hari pertamaku sekolah, jadi aku harus masuk sekolah pak,
     hehe.
   - Tapi aturan sekolah harus diikuti oleh semua siswa. Apakah kamu bisa lebih sopan

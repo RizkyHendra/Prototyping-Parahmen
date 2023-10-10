@@ -20482,7 +20482,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pengaturan
+  m_text: SETTING
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ba05db975fca3f46aa6090385e0ee2b, type: 2}
   m_sharedMaterial: {fileID: -1768226930728054974, guid: 0ba05db975fca3f46aa6090385e0ee2b, type: 2}
@@ -22193,7 +22193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BALIK MAIN
+  m_text: RESUME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ba05db975fca3f46aa6090385e0ee2b, type: 2}
   m_sharedMaterial: {fileID: -1768226930728054974, guid: 0ba05db975fca3f46aa6090385e0ee2b, type: 2}
@@ -24825,13 +24825,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Gerak
+  m_text: 'Movement
 
-    Lari
+    Sprint
 
-    Lompat
+    Jump
 
-    Peta'
+    Map'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d26403187b1adeb4094e451a34553fab, type: 2}
   m_sharedMaterial: {fileID: 8938979504672381181, guid: d26403187b1adeb4094e451a34553fab, type: 2}
@@ -29242,6 +29242,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &934496230
 GameObject:
   m_ObjectHideFlags: 0
@@ -30489,6 +30490,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &974284072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31998,6 +32000,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1011231459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38279,6 +38282,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1238200734
 GameObject:
   m_ObjectHideFlags: 0
@@ -47671,6 +47675,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1493555023
 GameObject:
   m_ObjectHideFlags: 0
@@ -52468,6 +52473,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1599110287
 Transform:
   m_ObjectHideFlags: 0
@@ -53786,6 +53792,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1648014261
 GameObject:
   m_ObjectHideFlags: 0
@@ -60423,7 +60430,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Balik ke Menu
+  m_text: HOME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ba05db975fca3f46aa6090385e0ee2b, type: 2}
   m_sharedMaterial: {fileID: -1768226930728054974, guid: 0ba05db975fca3f46aa6090385e0ee2b, type: 2}
@@ -64874,6 +64881,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1963061986
 GameObject:
   m_ObjectHideFlags: 0
@@ -68516,6 +68524,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2075010248
 GameObject:
   m_ObjectHideFlags: 0
@@ -70906,11 +70915,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pilih
+  m_text: 'Select
 
-    Konfirmasi
+    Confirm
 
-    Balik Main'
+    Resume'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d26403187b1adeb4094e451a34553fab, type: 2}
   m_sharedMaterial: {fileID: 8938979504672381181, guid: d26403187b1adeb4094e451a34553fab, type: 2}
