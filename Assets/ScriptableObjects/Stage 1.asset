@@ -38,17 +38,16 @@ MonoBehaviour:
   - Eitsss, where are you going? You're late and you can't go to class!
   - Chill pak, ini kan hari pertamaku sekolah, jadi aku harus masuk sekolah pak,
     hehe.
-  - Tapi aturan sekolah harus diikuti oleh semua siswa. Apakah kamu bisa lebih sopan
-    dalam berbicara?
-  - Hoamm, yaelah pak, aku tadi udah di depan sekolah, cuma lagi asik makan gorengannya
-    Pak Edo aja.
-  - Ya tetep aja itungannya kamu telat.
-  - Benar! Selagi telat ya telat, apapun alasannya tetep aja telat dan gak boleh
-    masuk!
-  - Lah kocak, tapi aku udah dateng dari pagi jam 6 pak!
-  - Lalu kenapa kamu ga masuk sekolah tadi sebelum jam 7?
-  - Udah pulang sana! Kamu tetep gak boleh masuk!
-  - Gak mau tau, pokoknya aku harus masuk!
+  - Chill sir, this is my first day of school, so I have to go to school sir, hehe.
+  - Hoamm, yes sir, I was already in front of the school, just enjoying eating Pak
+    Edo's fried food.
+  - Yes, you're still late.
+  - Correct! As long as you're late, you're late, whatever the reason, you're still
+    late and you can't come in!
+  - It's funny, but I've been here since morning at 6 a.m., sir!
+  - Then why didn't you go to school before 7 o'clock?
+  - I've gone home! You still can't come in!
+  - I don't want to know, anyway I have to go in!
   character:
   - {fileID: 21300000, guid: cad16cf7da936df4189046b884556abf, type: 3}
   - {fileID: 21300000, guid: 47a8f472e89785b4ebf31aaef329221a, type: 3}
