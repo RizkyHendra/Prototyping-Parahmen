@@ -273,6 +273,32 @@ public class CombatScript : MonoBehaviour
         }
         //Change impulse
         impulseSource.m_ImpulseDefinition.m_AmplitudeGain = Mathf.Max(3, 1 * distance);
+
+        int randomSound = Random.Range(1, 7);
+        if(randomSound == 1)
+        {
+            SoundManager.Instance.PlaySFX("SFX - Hit Arnold (1)");
+        }
+        else if(randomSound == 2)
+        {
+            SoundManager.Instance.PlaySFX("SFX - Hit Arnold (2)");
+        }
+        else if(randomSound == 3)
+        {
+            SoundManager.Instance.PlaySFX("SFX - Hit Arnold (3)");
+        }
+        else if (randomSound == 4)
+        {
+            SoundManager.Instance.PlaySFX("SFX - Hit Arnold (4)");
+        }
+        else if (randomSound == 5)
+        {
+            SoundManager.Instance.PlaySFX("SFX - Hit Arnold (5)");
+        }
+        else if (randomSound == 6)
+        {
+            SoundManager.Instance.PlaySFX("SFX - Hit Arnold (6)");
+        }
     }
     void AttackType(string attackTrigger, float cooldown, EnemyScript target, float movementDuration)
     {
