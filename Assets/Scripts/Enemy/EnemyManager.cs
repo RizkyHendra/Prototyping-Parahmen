@@ -12,6 +12,8 @@ public class EnemyManager : MonoBehaviour
     private Coroutine AI_Loop_Coroutine;
 
     public int aliveEnemyCount;
+
+    public GameObject Interaction1, Interaction2, Interaction3;
     void Start()
     {
         enemies = GetComponentsInChildren<EnemyScript>();
@@ -27,6 +29,44 @@ public class EnemyManager : MonoBehaviour
         StartAI();
     }
 
+    private void Update()
+    {
+        if(aliveEnemyCount == 3)
+        {
+            StartCoroutine("InteractionOne");
+        }
+        if (aliveEnemyCount == 2)
+        {
+            StartCoroutine("InteractionTwo");
+        }
+        if (aliveEnemyCount == 1)
+        {
+            StartCoroutine("InteractionThree");
+        }
+   
+
+    }
+
+
+    public IEnumerator InteractionOne()
+    {
+        Interaction1.SetActive(true);
+        yield return new WaitForSeconds(3);
+        Destroy(Interaction1);
+    }
+    public IEnumerator InteractionTwo()
+    {
+        Interaction2.SetActive(true);
+        yield return new WaitForSeconds(3);
+        Destroy(Interaction2);
+    }
+    public IEnumerator InteractionThree()
+    {
+        Interaction3.SetActive(true);
+        yield return new WaitForSeconds(3);
+        Destroy(Interaction3);
+    }
+  
     public void StartAI()
     {
         AI_Loop_Coroutine = StartCoroutine(AI_Loop(null));

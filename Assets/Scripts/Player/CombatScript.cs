@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class CombatScript : MonoBehaviour
 {
-    
+    public GameObject lastInteraction;
     public TacticalMode tacticalMode;
     private EnemyManager enemyManager;
     private EnemyDetection enemyDetection;
@@ -310,7 +310,11 @@ public class CombatScript : MonoBehaviour
 
         //Check if last enemy
         if (isLastHit())
+        {
             StartCoroutine(FinalBlowCoroutine());
+            StartCoroutine(LastInteractionn());
+        }
+            
 
         if (target == null)
             return;
@@ -329,15 +333,23 @@ public class CombatScript : MonoBehaviour
             movementInput.enabled = true;
             LerpCharacterAcceleration();
         }
-         IEnumerator FinalBlowCoroutine()
+        IEnumerator LastInteractionn()
+        {
+            lastInteraction.SetActive(true);
+            yield return new WaitForSecondsRealtime(5);
+            lastInteraction.SetActive(false);
+        }
+        IEnumerator FinalBlowCoroutine()
         {
             Time.timeScale = .5f;
             lastHitCamera.SetActive(true);
             lastHitFocusObject.position = lockedTarget.transform.position;
+           
             yield return new WaitForSecondsRealtime(2);
             // Game Win
             
             lastHitCamera.SetActive(false);
+           
             Time.timeScale = 1f;
             
             yield return new WaitForSecondsRealtime(5);
