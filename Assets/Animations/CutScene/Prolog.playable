@@ -1474,7 +1474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  subtitleText: "Wawan:\nBener-bener jadi pelarian setelah seharian belajar di sekolah.\r"
+  subtitleText: 'Arnold:
+
+    It''s really an escape after a long day of studying
+    at school.'
 --- !u!114 &-8005559255200312934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1504,9 +1507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Kang Edo:
+  subtitleText: 'Uncle Edo:
 
-    Sekolah tetap penting, lho.'
+    School is still important, you know.'
 --- !u!114 &-7655297080087078053
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1551,9 +1554,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Wawan:
+  subtitleText: 'Arnold:
 
-    Oh iya Kang, ada pepatah mengatakan..'
+    Oh yes Kang, there is a saying that says...'
 --- !u!114 &-7104205465134235803
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1943,9 +1946,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Kang Edo:
+  subtitleText: 'Uncle Edo:
 
-    Oh iya, kamu ga sekolah Wan? Jam masuk sudah lewat!'
+    Oh yeah, you don''t go to school, Arnold? Entrance
+    time has passed!'
 --- !u!114 &-6420146549010570659
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1958,10 +1962,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Kang Edo:
+  subtitleText: 'Uncle Edo:
 
-    Tapi, kamu harus ingat, Wawan, jangan terlalu larut
-    dalam kenyamanan. '
+    But, you have to remember, Arnold, don''t get too
+    caught up in comfort.'
 --- !u!114 &-5999147850481988741
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1991,9 +1995,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Kang Edo:
+  subtitleText: 'Uncle Edo:
 
-    Yaelah, anak jaman sekarang pinter banget alesan.'
+    Yes, kids nowadays are really smart.'
 --- !u!114 &-5950185718771587344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2068,7 +2072,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -2095,7 +2117,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -2480,10 +2520,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Kang Edo:
+  subtitleText: 'Uncle Edo:
 
-    Sekolah dulu hidup memang keras, tapi ada kenangan
-    indahnya juga.'
+    School life was tough, but there were happy memories
+    too.'
 --- !u!114 &-4728154071037281228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2513,9 +2553,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Wawan:
+  subtitleText: 'Arnold:
 
-    "Agar Silaturahmi Tidak Terputus, Pinjam Dululah Seratus"'
+    "So that the friendship is not broken, borrow one hundred
+    first"'
 --- !u!114 &-4084568236908096446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2667,8 +2708,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: "Kang Edo:\nKamu tahu, dulu aku juga sering ngemil di warung ini
-    waktu masih sekolah dulu.\r"
+  subtitleText: 'Uncle Edo:
+
+    You know, I used to often snack at this stall when
+    I was still at school.'
 --- !u!114 &-158985314562790957
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3045,9 +3088,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Kang Edo:
+  subtitleText: 'Uncle Edo:
 
-    Wah, sudah terlambat bayar, terus gak bawa uang.'
+    Wow, I''m already late paying, and I don''t have
+    any money with me.'
 --- !u!114 &409667113587994260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4347,7 +4391,7 @@ MonoBehaviour:
   m_Version: 3
   m_AnimClip: {fileID: 0}
   m_Locked: 0
-  m_Muted: 1
+  m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
@@ -5727,9 +5771,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Kang Edo:
+  subtitleText: 'Uncle Edo:
 
-    Udah sana masuk sekolah. Hari pertama gak boleh telat.'
+    I''ve gone to school. You can''t be late on the
+    first day.'
 --- !u!114 &2937905386393361123
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5791,9 +5836,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  subtitleText: 'Kang Edo:
+  subtitleText: 'Uncle Edo:
 
-    Haha, iya Wawan.'
+    Haha, yes Arnold.'
 --- !u!114 &3334152672832528477
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5979,8 +6024,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: "Wawan:\nOh iya aku lupa Kang!. Aku langsung buru-buru ke sekolah
-    deh!\r"
+  subtitleText: 'Arnold:
+
+    Oh yeah, I forgot, Uncle! I immediately rushed to school!'
 --- !u!114 &4404775781832838940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6086,9 +6132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Wawan:
+  subtitleText: 'Arnold:
 
-    "Ikan Gurami Ikan Gabus, Ikan Arwana Makannya Tikus"'
+    "Gourami Fish, Snakehead Fish, Arowana Fish Eat Rats"'
 --- !u!114 &4599089270639954588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6224,9 +6270,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Wawan:
+  subtitleText: 'Arnold:
 
-    Lah aku gabawa uang Kang, aku bayar nanti deh kang hehe.
+    Well, I didn''t bring any money, Uncle. I''ll pay later,
+    hehe.
 
 '
 --- !u!114 &6821709739053254244
@@ -6241,10 +6288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Wawan:
+  subtitleText: 'Arnold:
 
-    Eh iya, Kang! Tunggu sebentar, aku juga belum bayar
-    tadi.
+    Oh yes, Uncle! Wait a minute, I haven''t paid yet either.
 
 '
 --- !u!114 &7005940548131578695
@@ -6275,9 +6321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  subtitleText: 'Wawan:
+  subtitleText: 'Arnold:
 
-    Kang, enak banget jajanan di warungmu.
+    Uncle, the snacks at your stall are really delicious.
 
 '
 --- !u!114 &7812650057208821623
@@ -6309,9 +6355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Wawan:
+  subtitleText: 'Arnold:
 
-    Eh, jadi saya bisa jadi pelanggan VIP, dong?'
+    Eh, so I can be a VIP customer, right?'
 --- !u!114 &8498658119687484534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6324,9 +6370,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60476100a6b4b2748ac3642887da94e5, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  subtitleText: 'Wawan:
+  subtitleText: 'Arnold:
 
-    Ups, maaf Kang, lupa banget.
+    Oops, sorry Uncle, I totally forgot.
 
 '
 --- !u!114 &8540219038333194808
