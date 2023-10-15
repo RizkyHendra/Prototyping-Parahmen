@@ -57,7 +57,7 @@ public class EnemyManager : MonoBehaviour
         Interaction1.SetActive(true);
         if(!isPlay1 )
         {
-            SoundManager.Instance.PlaySFX("SFX - Narrative Arnold (1)");
+            //SoundManager.Instance.PlaySFX("SFX - Narrative Arnold (1)");
             isPlay1 = true;
         }
         
@@ -72,7 +72,7 @@ public class EnemyManager : MonoBehaviour
 
         if (!isPlay2)
         {
-            SoundManager.Instance.PlaySFX("SFX - Narrative Arnold (2)");
+            //SoundManager.Instance.PlaySFX("SFX - Narrative Arnold (2)");
             isPlay2 = true;
         }
         yield return new WaitForSeconds(2.2f);
@@ -85,7 +85,7 @@ public class EnemyManager : MonoBehaviour
 
         if (!isPlay3)
         {
-            SoundManager.Instance.PlaySFX("SFX - Narrative Arnold (3)");
+            //SoundManager.Instance.PlaySFX("SFX - Narrative Arnold (3)");
             isPlay3 = true;
         }
         yield return new WaitForSeconds(2.2f);

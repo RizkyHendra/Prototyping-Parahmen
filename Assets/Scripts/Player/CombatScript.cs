@@ -319,7 +319,7 @@ public class CombatScript : MonoBehaviour
 
             if (!isPlay4)
             {
-                SoundManager.Instance.PlaySFX("SFX - Narrative Arnold (4)");
+                //SoundManager.Instance.PlaySFX("SFX - Narrative Arnold (4)");
                 isPlay4 = true;
             }
         }
