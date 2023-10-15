@@ -38,9 +38,11 @@ public class EnemyManager : MonoBehaviour
         if (aliveEnemyCount == 2)
         {
             StartCoroutine("InteractionTwo");
+
         }
         if (aliveEnemyCount == 1)
         {
+            
             StartCoroutine("InteractionThree");
         }
    
@@ -51,19 +53,22 @@ public class EnemyManager : MonoBehaviour
     public IEnumerator InteractionOne()
     {
         Interaction1.SetActive(true);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2.2f);
         Destroy(Interaction1);
     }
     public IEnumerator InteractionTwo()
     {
         Interaction2.SetActive(true);
-        yield return new WaitForSeconds(3);
+        Interaction1.SetActive(false);
+        yield return new WaitForSeconds(2.2f);
         Destroy(Interaction2);
     }
     public IEnumerator InteractionThree()
     {
+     
+        Interaction2.SetActive(false);
         Interaction3.SetActive(true);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2.2f);
         Destroy(Interaction3);
     }
   

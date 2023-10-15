@@ -2956,7 +2956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.7294118}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3237,14 +3237,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.82427204, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.8467734, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dac9a95c57f369248ae1d91bf3ea8e52, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75b7f5daff3b897479841a49647b47fb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5115,7 +5115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.95686275}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7681,10 +7681,10 @@ RectTransform:
   m_Father: {fileID: 871596005}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.074510485}
+  m_AnchorMax: {x: 1, y: 0.8821693}
+  m_AnchoredPosition: {x: 0, y: 10.639}
+  m_SizeDelta: {x: 0, y: 6.595001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &673417982
 MonoBehaviour:
@@ -7706,7 +7706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: adf5aacec892803419813f6450385795, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3c12150a2518ea42826046338925577, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9483,7 +9483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7168697, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11427,7 +11427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 29, y: 21}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1048842664
@@ -12002,7 +12002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.95686275}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13615,10 +13615,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You LOSEEE !!! , VIRUSSS !!!
+  m_text: YOU LOSEEER VIRUSSS !!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e9aef0dd7bdad75458fb612ff2ca125b, type: 2}
-  m_sharedMaterial: {fileID: -7653430147497694038, guid: e9aef0dd7bdad75458fb612ff2ca125b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f9c0bd38fe03bed4c8491b5a98952a1b, type: 2}
+  m_sharedMaterial: {fileID: -1768226930728054974, guid: f9c0bd38fe03bed4c8491b5a98952a1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13642,8 +13642,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.31
-  m_fontSizeBase: 20.31
+  m_fontSize: 20.7
+  m_fontSizeBase: 20.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -14330,7 +14330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.95686275}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16649,7 +16649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.95686275}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -19335,7 +19335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 20, y: 18}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1502453081
@@ -20264,7 +20264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 96.21, y: 0}
+  m_AnchoredPosition: {x: 118.2, y: 4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1576345996
@@ -20289,8 +20289,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ohh i see, Uncle Is Being Controlled By a Virus
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e9aef0dd7bdad75458fb612ff2ca125b, type: 2}
-  m_sharedMaterial: {fileID: -7653430147497694038, guid: e9aef0dd7bdad75458fb612ff2ca125b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f9c0bd38fe03bed4c8491b5a98952a1b, type: 2}
+  m_sharedMaterial: {fileID: -1768226930728054974, guid: f9c0bd38fe03bed4c8491b5a98952a1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20314,8 +20314,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.31
-  m_fontSizeBase: 20.31
+  m_fontSize: 16.7
+  m_fontSizeBase: 16.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -20707,7 +20707,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68, y: 0}
+  m_AnchoredPosition: {x: 49.4, y: 6.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1597716683
@@ -20732,8 +20732,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Why Did You Hit Me Uncle?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e9aef0dd7bdad75458fb612ff2ca125b, type: 2}
-  m_sharedMaterial: {fileID: -7653430147497694038, guid: e9aef0dd7bdad75458fb612ff2ca125b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f9c0bd38fe03bed4c8491b5a98952a1b, type: 2}
+  m_sharedMaterial: {fileID: -1768226930728054974, guid: f9c0bd38fe03bed4c8491b5a98952a1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20757,14 +20757,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.31
-  m_fontSizeBase: 20.31
+  m_fontSize: 14.5
+  m_fontSizeBase: 14.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -24744,7 +24744,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 0, y: 15}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1855017691
@@ -28437,8 +28437,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: I Will Defeat That Damn Virus
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e9aef0dd7bdad75458fb612ff2ca125b, type: 2}
-  m_sharedMaterial: {fileID: -7653430147497694038, guid: e9aef0dd7bdad75458fb612ff2ca125b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f9c0bd38fe03bed4c8491b5a98952a1b, type: 2}
+  m_sharedMaterial: {fileID: -1768226930728054974, guid: f9c0bd38fe03bed4c8491b5a98952a1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -28462,8 +28462,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.31
-  m_fontSizeBase: 20.31
+  m_fontSize: 16.3
+  m_fontSizeBase: 16.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -30329,6 +30329,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7348574982493260329}
     m_Modifications:
+    - target: {fileID: 618874667216221328, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667216221328, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.324
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667216221358, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: lengthInSec
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667547021013, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: lengthInSec
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667547021015, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667547021015, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667547021015, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667547021015, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667547021015, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667547021015, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667547021015, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667547021015, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667547021015, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667547021015, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 618874667547021015, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 1547067198647804812, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.62
@@ -30339,7 +30399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2837036791738645841, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
       propertyPath: health
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2837036791738645841, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
       propertyPath: playerHitParticle
@@ -30413,6 +30473,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4381748898437798133, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
+      propertyPath: m_Name
+      value: Enemy 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4802050982134620706, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.76
@@ -30423,7 +30487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4802050982134620707, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
       propertyPath: health
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4802050982134620707, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
       propertyPath: playerHitParticle
@@ -30431,7 +30495,7 @@ PrefabInstance:
       objectReference: {fileID: 222196039}
     - target: {fileID: 4802050983005331680, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
       propertyPath: health
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4802050983005331680, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
       propertyPath: playerHitParticle
@@ -30447,7 +30511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7845882857645467990, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
       propertyPath: health
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7845882857645467990, guid: 703f0a3e27282d04299a2a229372ed52, type: 3}
       propertyPath: playerHitParticle
@@ -31656,7 +31720,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7348574982163327164}
   m_LocalRotation: {x: 0.017289149, y: -0.000000029802326, z: 0.0000000046566133, w: 0.9998506}
-  m_LocalPosition: {x: -0.000087147804, y: -0.0000106230755, z: -0.000053562344}
+  m_LocalPosition: {x: -0.00002841879, y: -0.00000352508, z: -0.00001777372}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48744,7 +48808,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 2293
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.66e-43, y: 8.2464556e-35, z: 5.66e-43, w: 3.43048e-39}
+  m_BoundingSphereOverride: {x: 1.3e-44, y: 1.8525046e+28, z: 7.397733e+31, w: 3.4e-44}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 1
@@ -49203,7 +49267,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7348574983847088107}
-  m_LocalRotation: {x: 0.048766114, y: -0.000000059604645, z: 0.000000013504177, w: 0.9988103}
+  m_LocalRotation: {x: 0.048766114, y: -0.000000014901161, z: 0.000000003259629, w: 0.9988103}
   m_LocalPosition: {x: -0.000014270867, y: -0.0000016705494, z: -0.000008423036}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
