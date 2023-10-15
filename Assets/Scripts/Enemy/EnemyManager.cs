@@ -13,6 +13,8 @@ public class EnemyManager : MonoBehaviour
 
     public int aliveEnemyCount;
 
+    bool isPlay1, isPlay2, isPlay3;
+
     public GameObject Interaction1, Interaction2, Interaction3;
     void Start()
     {
@@ -27,6 +29,10 @@ public class EnemyManager : MonoBehaviour
         }
 
         StartAI();
+
+        isPlay1 = false;
+        isPlay2 = false;
+        isPlay3 = false;
     }
 
     private void Update()
@@ -38,36 +44,50 @@ public class EnemyManager : MonoBehaviour
         if (aliveEnemyCount == 2)
         {
             StartCoroutine("InteractionTwo");
-
         }
         if (aliveEnemyCount == 1)
         {
-            
             StartCoroutine("InteractionThree");
         }
-   
-
     }
 
 
     public IEnumerator InteractionOne()
     {
         Interaction1.SetActive(true);
+        if(!isPlay1 )
+        {
+            SoundManager.Instance.PlaySFX("SFX - Narrative Arnold (1)");
+            isPlay1 = true;
+        }
+        
         yield return new WaitForSeconds(2.2f);
         Destroy(Interaction1);
     }
     public IEnumerator InteractionTwo()
     {
+        
         Interaction2.SetActive(true);
-        Interaction1.SetActive(false);
+        //Interaction1.SetActive(false);
+
+        if (!isPlay2)
+        {
+            SoundManager.Instance.PlaySFX("SFX - Narrative Arnold (2)");
+            isPlay2 = true;
+        }
         yield return new WaitForSeconds(2.2f);
         Destroy(Interaction2);
     }
     public IEnumerator InteractionThree()
     {
-     
-        Interaction2.SetActive(false);
+        //Interaction2.SetActive(false);
         Interaction3.SetActive(true);
+
+        if (!isPlay3)
+        {
+            SoundManager.Instance.PlaySFX("SFX - Narrative Arnold (3)");
+            isPlay3 = true;
+        }
         yield return new WaitForSeconds(2.2f);
         Destroy(Interaction3);
     }

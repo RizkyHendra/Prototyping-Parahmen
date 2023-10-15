@@ -77,8 +77,12 @@ public class CombatScript : MonoBehaviour
     int animationCount = 0;
     string[] attacks;
 
+    bool isPlay4 = false;
+
     void Start()
     {
+        isPlay4 = false;
+        
         // Stamina Bar
         maxStamina = stamina;
         staminaBar.maxValue = maxStamina;
@@ -133,7 +137,6 @@ public class CombatScript : MonoBehaviour
         }
 
         lockedTarget = enemyDetection.newCurrentTarget;
-
     }
 
     private void DecreaseEnergyStamina()
@@ -313,6 +316,12 @@ public class CombatScript : MonoBehaviour
         {
             StartCoroutine(FinalBlowCoroutine());
             StartCoroutine(LastInteractionn());
+
+            if (!isPlay4)
+            {
+                SoundManager.Instance.PlaySFX("SFX - Narrative Arnold (4)");
+                isPlay4 = true;
+            }
         }
             
 
